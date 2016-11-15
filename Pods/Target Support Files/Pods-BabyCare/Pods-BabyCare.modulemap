@@ -1,0 +1,6 @@
+framework module Pods_BabyCare {
+  umbrella header "Pods-BabyCare-umbrella.h"
+
+  export *
+  module * { export * }
+}
