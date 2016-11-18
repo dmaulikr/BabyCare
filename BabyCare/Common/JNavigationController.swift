@@ -21,7 +21,7 @@ class JNavigationController: UINavigationController, UIGestureRecognizerDelegate
         
         self.navigationBar.barTintColor = UIColor.colorWithHexAndAlpha(hex: "313131", alpha: 1)
         
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName: pfont(size: 22)]
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
         
         self.navigationBar.shadowImage = UIImage()
     }

@@ -57,36 +57,51 @@ class JDataModel{
         return ""
     }
     
+    func entityData(data:Dictionary<String, Any>) -> Any? {
+        return Entity.entityElement(data: data)
+    }
+    
     func loadData(start:() -> (),sucess:@escaping (_ dataModel: JDataModel) -> (), failed:(_ error: Error) -> ()){
         if !loading {
             start()
             loading = true
             HttpManager.requestAsynchronous(url: self.requestUrl(), parameters: self.resultParam()) { data in
-                sucess(self.parseData(data: data))
+                sucess(self.parseData(data: data as! Dictionary<String, Any>?))
                 self.loading = false
             }
         }
     }
     
-    func parseData(data:AnyObject?) -> JDataModel {
+    func parseData(data:Dictionary<String,Any>?) -> JDataModel {
         self.code = data?["code"] as! Int
         self.msg = data?["msg"] as! String
         if self.code != 0 {
             return self
         }
         if let ret = data?["data"] {
-            if ret is Array<AnyObject> && !reload {
+            if ret is Array<AnyObject>{
+                var retArray = [AnyObject]()
                 
-                if ((ret as? Array<AnyObject>)?.count)! >= limitedCount {
+                if retArray.count >= limitedCount {
                     canLoadMore = true
                 }else{
                     canLoadMore = false
                 }
                 
-                let array = self.data as! Array<String>
-                self.data = (array + (ret as! Array<String>)) as AnyObject
+                var array = self.data as! [AnyObject]
+                
+                for i in 0 ..< (ret as! Array<AnyObject>).count{
+//                    retArray.replaceObject(at: i, with: self.entityData(data: retArray[i]))
+                    retArray[i] = self.entityData(data: (ret as! Array<Any>)[i] as! Dictionary<String, Any>) as AnyObject
+                }
+                if !reload {
+                    array += retArray
+                    self.data = array as AnyObject?
+                }else{
+                    self.data = retArray as AnyObject?
+                }
             }else{
-                self.data = ret as AnyObject
+                self.data = self.entityData(data: ret as! Dictionary<String, Any>) as AnyObject
             }
             itemCount = (self.data?.count)!
             reload = false

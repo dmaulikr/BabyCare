@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3759CDD91DDC726A006BE20B /* login_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3759CDD51DDC726A006BE20B /* login_password@2x.png */; };
+		3759CDDA1DDC726A006BE20B /* login_password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3759CDD61DDC726A006BE20B /* login_password@3x.png */; };
+		3759CDDB1DDC726A006BE20B /* login_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3759CDD71DDC726A006BE20B /* login_phone@2x.png */; };
+		3759CDDC1DDC726A006BE20B /* login_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3759CDD81DDC726A006BE20B /* login_phone@3x.png */; };
+		3759CDE01DDCCBBE006BE20B /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759CDDF1DDCCBBE006BE20B /* Entity.swift */; };
+		3759CDE21DDD96DF006BE20B /* BUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759CDE11DDD96DF006BE20B /* BUser.swift */; };
+		3772B8751DDF777D00026276 /* BUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772B8741DDF777D00026276 /* BUserSession.swift */; };
 		3793D8661DDACAB400AF87A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8651DDACAB400AF87A8 /* AppDelegate.swift */; };
 		3793D86D1DDACAB400AF87A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3793D86C1DDACAB400AF87A8 /* Assets.xcassets */; };
 		3793D8971DDACAFE00AF87A8 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D87D1DDACAFE00AF87A8 /* HttpManager.swift */; };
@@ -27,10 +34,19 @@
 		3793D8A61DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8941DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift */; };
 		3793D8A71DDACAFE00AF87A8 /* JPullRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8951DDACAFE00AF87A8 /* JPullRefreshViewController.swift */; };
 		3793D8A81DDACAFE00AF87A8 /* JRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8961DDACAFE00AF87A8 /* JRefreshView.swift */; };
+		37BDE6541DDAD392009C98CE /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BDE6531DDAD392009C98CE /* Macros.swift */; };
+		37BDE65C1DDAFB82009C98CE /* BLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BDE65B1DDAFB82009C98CE /* BLoginViewController.swift */; };
 		4A6399BB36D2624017FB5A28 /* Pods_BabyCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F9DA3FE7DC483C8A95E72 /* Pods_BabyCare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3759CDD51DDC726A006BE20B /* login_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password@2x.png"; sourceTree = "<group>"; };
+		3759CDD61DDC726A006BE20B /* login_password@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password@3x.png"; sourceTree = "<group>"; };
+		3759CDD71DDC726A006BE20B /* login_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_phone@2x.png"; sourceTree = "<group>"; };
+		3759CDD81DDC726A006BE20B /* login_phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_phone@3x.png"; sourceTree = "<group>"; };
+		3759CDDF1DDCCBBE006BE20B /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		3759CDE11DDD96DF006BE20B /* BUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUser.swift; sourceTree = "<group>"; };
+		3772B8741DDF777D00026276 /* BUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUserSession.swift; sourceTree = "<group>"; };
 		3793D8621DDACAB400AF87A8 /* BabyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3793D8651DDACAB400AF87A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3793D86C1DDACAB400AF87A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +71,8 @@
 		3793D8941DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPullRefreshLoadMoreViewController.swift; sourceTree = "<group>"; };
 		3793D8951DDACAFE00AF87A8 /* JPullRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPullRefreshViewController.swift; sourceTree = "<group>"; };
 		3793D8961DDACAFE00AF87A8 /* JRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRefreshView.swift; sourceTree = "<group>"; };
+		37BDE6531DDAD392009C98CE /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
+		37BDE65B1DDAFB82009C98CE /* BLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLoginViewController.swift; sourceTree = "<group>"; };
 		519F11A5A333A296BBC0B454 /* Pods-BabyCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyCare/Pods-BabyCare.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4AB3BB0D336FE9A5605557 /* Pods-BabyCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyCare/Pods-BabyCare.release.xcconfig"; sourceTree = "<group>"; };
 		5D8F9DA3FE7DC483C8A95E72 /* Pods_BabyCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +90,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3759CDD31DDC721F006BE20B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3759CDD41DDC726A006BE20B /* Login */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		3759CDD41DDC726A006BE20B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3759CDD51DDC726A006BE20B /* login_password@2x.png */,
+				3759CDD61DDC726A006BE20B /* login_password@3x.png */,
+				3759CDD71DDC726A006BE20B /* login_phone@2x.png */,
+				3759CDD81DDC726A006BE20B /* login_phone@3x.png */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3793D8591DDACAB400AF87A8 = {
 			isa = PBXGroup;
 			children = (
@@ -94,11 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				3793D8651DDACAB400AF87A8 /* AppDelegate.swift */,
+				37BDE6531DDAD392009C98CE /* Macros.swift */,
 				3793D87C1DDACAFE00AF87A8 /* Util */,
-				3793D8871DDACAFE00AF87A8 /* Classes */,
 				3793D88D1DDACAFE00AF87A8 /* Common */,
+				3793D8871DDACAFE00AF87A8 /* Classes */,
 				3793D8771DDACAC400AF87A8 /* Resource */,
-				3793D8781DDACAD900AF87A8 /* BabyCare-Bridging-Header.h */,
 			);
 			path = BabyCare;
 			sourceTree = "<group>";
@@ -107,7 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				3793D86C1DDACAB400AF87A8 /* Assets.xcassets */,
+				3793D8781DDACAD900AF87A8 /* BabyCare-Bridging-Header.h */,
 				3793D8711DDACAB400AF87A8 /* Info.plist */,
+				3759CDD31DDC721F006BE20B /* Images */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -115,6 +154,7 @@
 		3793D87C1DDACAFE00AF87A8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3793D8841DDACAFE00AF87A8 /* Util_OC */,
 				3793D87D1DDACAFE00AF87A8 /* HttpManager.swift */,
 				3793D87E1DDACAFE00AF87A8 /* JDataModel.swift */,
 				3793D87F1DDACAFE00AF87A8 /* String.swift */,
@@ -122,7 +162,6 @@
 				3793D8811DDACAFE00AF87A8 /* UIImage+Extension.swift */,
 				3793D8821DDACAFE00AF87A8 /* UIView+Extension.swift */,
 				3793D8831DDACAFE00AF87A8 /* Util.swift */,
-				3793D8841DDACAFE00AF87A8 /* Util_OC */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -139,6 +178,7 @@
 		3793D8871DDACAFE00AF87A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37BDE6571DDAFB66009C98CE /* Account */,
 				3793D8881DDACAFE00AF87A8 /* Main */,
 			);
 			path = Classes;
@@ -188,8 +228,43 @@
 				3793D8941DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift */,
 				3793D8951DDACAFE00AF87A8 /* JPullRefreshViewController.swift */,
 				3793D8961DDACAFE00AF87A8 /* JRefreshView.swift */,
+				3759CDDF1DDCCBBE006BE20B /* Entity.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		37BDE6571DDAFB66009C98CE /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				37BDE6581DDAFB66009C98CE /* Controller */,
+				37BDE6591DDAFB66009C98CE /* Model */,
+				37BDE65A1DDAFB66009C98CE /* View */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		37BDE6581DDAFB66009C98CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37BDE65B1DDAFB82009C98CE /* BLoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		37BDE6591DDAFB66009C98CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3759CDE11DDD96DF006BE20B /* BUser.swift */,
+				3772B8741DDF777D00026276 /* BUserSession.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37BDE65A1DDAFB66009C98CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		71195BD2DEF88DA2961FED07 /* Frameworks */ = {
@@ -274,6 +349,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3793D86D1DDACAB400AF87A8 /* Assets.xcassets in Resources */,
+				3759CDDB1DDC726A006BE20B /* login_phone@2x.png in Resources */,
+				3759CDD91DDC726A006BE20B /* login_password@2x.png in Resources */,
+				3759CDDC1DDC726A006BE20B /* login_phone@3x.png in Resources */,
+				3759CDDA1DDC726A006BE20B /* login_password@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,16 +418,21 @@
 				3793D8A01DDACAFE00AF87A8 /* JBaseTableViewCell.swift in Sources */,
 				3793D8661DDACAB400AF87A8 /* AppDelegate.swift in Sources */,
 				3793D8A71DDACAFE00AF87A8 /* JPullRefreshViewController.swift in Sources */,
+				3759CDE21DDD96DF006BE20B /* BUser.swift in Sources */,
 				3793D89E1DDACAFE00AF87A8 /* JCacheManager.m in Sources */,
 				3793D89C1DDACAFE00AF87A8 /* UIView+Extension.swift in Sources */,
 				3793D8981DDACAFE00AF87A8 /* JDataModel.swift in Sources */,
+				3759CDE01DDCCBBE006BE20B /* Entity.swift in Sources */,
 				3793D8A21DDACAFE00AF87A8 /* JHttpTableViewController.swift in Sources */,
+				3772B8751DDF777D00026276 /* BUserSession.swift in Sources */,
 				3793D8A41DDACAFE00AF87A8 /* JNavigationController.swift in Sources */,
 				3793D89D1DDACAFE00AF87A8 /* Util.swift in Sources */,
 				3793D8991DDACAFE00AF87A8 /* String.swift in Sources */,
 				3793D89B1DDACAFE00AF87A8 /* UIImage+Extension.swift in Sources */,
 				3793D8971DDACAFE00AF87A8 /* HttpManager.swift in Sources */,
+				37BDE6541DDAD392009C98CE /* Macros.swift in Sources */,
 				3793D89F1DDACAFE00AF87A8 /* BMainViewController.swift in Sources */,
+				37BDE65C1DDAFB82009C98CE /* BLoginViewController.swift in Sources */,
 				3793D8A81DDACAFE00AF87A8 /* JRefreshView.swift in Sources */,
 				3793D89A1DDACAFE00AF87A8 /* UIColor+Extension.swift in Sources */,
 			);
@@ -375,6 +459,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -397,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -424,6 +509,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -440,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -452,7 +538,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 519F11A5A333A296BBC0B454 /* Pods-BabyCare.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 57ZK8687SF;
 				INFOPLIST_FILE = BabyCare/Info.plist;
@@ -469,7 +557,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B4AB3BB0D336FE9A5605557 /* Pods-BabyCare.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 57ZK8687SF;
 				INFOPLIST_FILE = BabyCare/Info.plist;

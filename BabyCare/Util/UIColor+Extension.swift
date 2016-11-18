@@ -19,7 +19,7 @@ extension UIColor{
     
     class private func processColorWithHexAndAlpha(hex:String, alpha:Float) -> UIColor{
         if hex.isEmpty {
-            return UIColor.clear
+            return UIColor(white: 0, alpha: CGFloat(alpha))
         }
         var tempHex = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         if tempHex.characters.count<6 {

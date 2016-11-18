@@ -47,30 +47,6 @@ class JOnePixLineView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-//        CGFloat bottomInset;
-//        if ([UIScreen mainScreen].scale > 1.0f) {
-//            bottomInset = 0.25;
-//        } else {
-//            bottomInset = 0.5;
-//        }
-//        
-//        CGContextRef context = UIGraphicsGetCurrentContext();
-//        CGContextSaveGState(context);
-//        CGContextSetLineWidth(context, 0.5);
-//        if (!_lineColor) {
-//            _lineColor = [UIColor grayColor];
-//        }
-//        CGContextSetStrokeColorWithColor(context, _lineColor.CGColor);
-//        if (_mode == JOnePixLineModeHorizontal) {
-//            CGContextMoveToPoint(context, 0, CGRectGetHeight(rect)-bottomInset);
-//            CGContextAddLineToPoint(context, CGRectGetWidth(rect), CGRectGetHeight(rect)-bottomInset);
-//        } else {
-//            CGContextMoveToPoint(context, CGRectGetWidth(rect)-bottomInset, 0);
-//            CGContextAddLineToPoint(context, CGRectGetWidth(rect)-bottomInset, CGRectGetHeight(rect));
-//        }
-//        CGContextStrokePath(context);
-//        CGContextRestoreGState(context);
-//   
         var bottomInset: CGFloat
         if UIScreen.main.scale > 1 {
             bottomInset = 0.25

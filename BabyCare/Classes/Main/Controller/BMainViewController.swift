@@ -10,6 +10,12 @@ import UIKit
 
 class BMainViewController: JBaseViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let label = UILabel(frame: CGRect(x: 20, y: 50, width: 100, height: 20))
