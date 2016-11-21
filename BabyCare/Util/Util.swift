@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+func PerformSelector(delay: Double,execute: @escaping ()->()){
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay){
+        execute()
+    }
+}
+
 class Util{
     class func getCurrentDeviceUUID() -> String{        
         return (UIDevice.current.identifierForVendor?.uuidString)!

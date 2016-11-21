@@ -8,20 +8,57 @@
 
 import UIKit
 
-class BMainViewController: JBaseViewController {
+class BMainViewController: JBaseViewController, BMainTabBarDelegate {
+    
+    var tabBar: BMainTabBar?
+    
+    var controllers: Array<JBaseViewController>?
+    var preController: JBaseViewController?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !BUserSession.instance.sessionValid {
+            self.presentLoginController()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let label = UILabel(frame: CGRect(x: 20, y: 50, width: 100, height: 20))
-        label.text = "测试"
         
-        self.view.addSubview(label)
+        tabBar = BMainTabBar()
+        tabBar?.delegate = self
+        tabBar?.origin = CGPoint(x: 0, y: self.view.height - (tabBar?.height)!)
+        tabBar?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
+        tabBar?.selectedIndex = 0
+        self.view.addSubview(tabBar!)
+    }
+    
+    func setSelectIndex(index: Int){
+        let controller = controllers?[index]
+        if controller == preController {
+            return
+        }
+        
+    }
+    
+    func presentLoginController(){
+        
+        let loginVC = BLoginViewController()
+        loginVC.modalTransitionStyle = .crossDissolve
+        self.present(loginVC, animated: false, completion: { 
+        })
     }
 
+    func clicked(){
+
+    }
+    
+    func tabBarClicked(index: Int) {
+        
+    }
 }

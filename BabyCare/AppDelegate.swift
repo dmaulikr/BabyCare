@@ -20,16 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.clear
         self.window?.makeKeyAndVisible()
         
-        self.window?.rootViewController = JNavigationController(rootViewController: BLoginViewController())
-//        
-//        let entity = Entity()
-//        
-////        let dic = ["i":["get":"love"]]
-//        
-//        let dic = ["i":[["get":"love1"],["get":"love2"]]]
-//        
-//        entity.entity(with: dic)
-//        print("entity.i = \(entity.i)")
+        self.window?.rootViewController = JNavigationController(rootViewController: BMainViewController())
+        
         return true
     }
 

@@ -70,4 +70,13 @@ extension UIView{
             self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: height)
         }
     }
+    
+    var origin: CGPoint{
+        get{
+            return self.frame.origin
+        }
+        set{
+            self.frame = CGRect(x: origin.x, y: origin.y, width: self.frame.size.width, height: self.frame.size.height)
+        }
+    }
 }

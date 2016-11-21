@@ -37,7 +37,7 @@ class JBaseViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
+        return .default
     }
     
     override var shouldAutorotate: Bool{
