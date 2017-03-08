@@ -23,6 +23,9 @@ class BUserSession{
     
     var sessionValid: Bool{
         get{
+            if user == nil {
+                return false
+            }
             return !(self.user?.uid?.isEmpty)!
         }
     }

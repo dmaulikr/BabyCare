@@ -12,8 +12,12 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
     
     var tabBar: BMainTabBar?
     
-    var controllers: Array<JBaseViewController>?
+    // controllers
+
     var preController: JBaseViewController?
+    lazy var _recordController: BRecordViewController = BRecordViewController()
+    lazy var _scheduleController: BScheduleViewController = BScheduleViewController()
+    lazy var _mineController: BMineViewController = BMineViewController()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,6 +33,12 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addChildViewController(_recordController)
+        self.addChildViewController(_scheduleController)
+        self.addChildViewController(_mineController)
+        self.view.addSubview(_recordController.view)
+        preController = _recordController
+        self.title = "宝宝日记"
         
         tabBar = BMainTabBar()
         tabBar?.delegate = self
@@ -36,14 +46,36 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         tabBar?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
         tabBar?.selectedIndex = 0
         self.view.addSubview(tabBar!)
+        
     }
     
     func setSelectIndex(index: Int){
-        let controller = controllers?[index]
-        if controller == preController {
+        let controller = self.childViewControllers[index]
+        if preController == controller {
             return
         }
         
+        switch index {
+        case 0:
+            self.title = "宝宝日记"
+        case 1:
+            self.title = "备忘提醒"
+        case 2:
+            self.title = "我的"
+        default:
+            break
+        }
+        self.transition(from: preController!, to: controller, duration: 0, options: .curveEaseOut, animations: {
+            [weak self] in
+            self?.view.bringSubview(toFront: (self?.tabBar)!)
+
+            self?.preController?.view.alpha = 0
+            controller.view.alpha = 1
+        }, completion: {
+           [weak self] complete in
+            self?.preController = controller as? JBaseViewController
+//            self?.view.bringSubview(toFront: (self?.tabBar)!)
+        })
     }
     
     func presentLoginController(){
@@ -60,5 +92,6 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
     
     func tabBarClicked(index: Int) {
         
+        self.setSelectIndex(index: index)
     }
 }

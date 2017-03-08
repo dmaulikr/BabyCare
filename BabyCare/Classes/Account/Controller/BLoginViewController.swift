@@ -135,6 +135,9 @@ class BLoginViewController: JBaseViewController, UITextFieldDelegate {
             let dic = object as! Dictionary<String, Any>
             if (dic["code"] as! Int) == 0{
                 BUserSession.instance.updateUser(with: dic["data"] as! Dictionary<String, Any>)
+                self.dismiss(animated: true, completion: { 
+                    
+                })
             }else{
                 Hud.show(content: dic["msg"] as! String, withTime: 3)
             }          

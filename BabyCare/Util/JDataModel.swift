@@ -26,11 +26,25 @@ class JDataModel{
         }
     }
     var page = 0
-    let limitedCount = 20
     
+    var limitedCount: Int{
+        return 20
+    }
+    
+    func param() -> Dictionary<String, String> {
+        return [:]
+    }
     
     func requestUrl() -> String {
         return ""
+    }
+    
+    func cacheKey() -> String? {
+        return ""
+    }
+    
+    func entityData(data:Dictionary<String, Any>) -> Any? {
+        return Entity.entityElement(data: data)
     }
     
     func item(index: Int) -> AnyObject? {
@@ -42,9 +56,6 @@ class JDataModel{
         return nil
     }
     
-    func param() -> Dictionary<String, String> {
-        return [:]
-    }
     
     private func resultParam() -> Dictionary<String, String>{
         var dic = self.param()
@@ -53,13 +64,6 @@ class JDataModel{
         return dic
     } 
     
-    func cacheKey() -> String? {
-        return ""
-    }
-    
-    func entityData(data:Dictionary<String, Any>) -> Any? {
-        return Entity.entityElement(data: data)
-    }
     
     func loadData(start:() -> (),sucess:@escaping (_ dataModel: JDataModel) -> (), failed:(_ error: Error) -> ()){
         if !loading {

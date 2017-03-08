@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371F9BF51E014D0300A7B996 /* JBreastMilkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F9BF41E014D0300A7B996 /* JBreastMilkDataModel.swift */; };
 		3724B2191DE18D42008D5EB3 /* BRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724B2181DE18D42008D5EB3 /* BRegisterViewController.swift */; };
 		3724B21D1DE18F91008D5EB3 /* common_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B21B1DE18F91008D5EB3 /* common_close@2x.png */; };
 		3724B21E1DE18F91008D5EB3 /* common_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B21C1DE18F91008D5EB3 /* common_close@3x.png */; };
@@ -19,6 +20,9 @@
 		3759CDE01DDCCBBE006BE20B /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759CDDF1DDCCBBE006BE20B /* Entity.swift */; };
 		3759CDE21DDD96DF006BE20B /* BUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759CDE11DDD96DF006BE20B /* BUser.swift */; };
 		3772B8751DDF777D00026276 /* BUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772B8741DDF777D00026276 /* BUserSession.swift */; };
+		378938B71DFD38C7002C2F7A /* BBreastMilkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378938B61DFD38C7002C2F7A /* BBreastMilkViewController.swift */; };
+		378938B91DFD390F002C2F7A /* BBottledBreastMilkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378938B81DFD390F002C2F7A /* BBottledBreastMilkViewController.swift */; };
+		378938BB1DFD392E002C2F7A /* BMilkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378938BA1DFD392E002C2F7A /* BMilkViewController.swift */; };
 		3793D8661DDACAB400AF87A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8651DDACAB400AF87A8 /* AppDelegate.swift */; };
 		3793D86D1DDACAB400AF87A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3793D86C1DDACAB400AF87A8 /* Assets.xcassets */; };
 		3793D8971DDACAFE00AF87A8 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D87D1DDACAFE00AF87A8 /* HttpManager.swift */; };
@@ -47,10 +51,12 @@
 		37F7766F1DE2EF1500557F9A /* BRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7766E1DE2EF1500557F9A /* BRecordViewController.swift */; };
 		37F776711DE2EF5C00557F9A /* BScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F776701DE2EF5C00557F9A /* BScheduleViewController.swift */; };
 		37F776731DE2EF6500557F9A /* BMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F776721DE2EF6500557F9A /* BMineViewController.swift */; };
+		37F776751DE3361200557F9A /* JSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F776741DE3361200557F9A /* JSegmentControl.swift */; };
 		4A6399BB36D2624017FB5A28 /* Pods_BabyCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F9DA3FE7DC483C8A95E72 /* Pods_BabyCare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371F9BF41E014D0300A7B996 /* JBreastMilkDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBreastMilkDataModel.swift; sourceTree = "<group>"; };
 		3724B2181DE18D42008D5EB3 /* BRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRegisterViewController.swift; sourceTree = "<group>"; };
 		3724B21B1DE18F91008D5EB3 /* common_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_close@2x.png"; sourceTree = "<group>"; };
 		3724B21C1DE18F91008D5EB3 /* common_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_close@3x.png"; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 		3759CDDF1DDCCBBE006BE20B /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		3759CDE11DDD96DF006BE20B /* BUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUser.swift; sourceTree = "<group>"; };
 		3772B8741DDF777D00026276 /* BUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUserSession.swift; sourceTree = "<group>"; };
+		378938B61DFD38C7002C2F7A /* BBreastMilkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBreastMilkViewController.swift; sourceTree = "<group>"; };
+		378938B81DFD390F002C2F7A /* BBottledBreastMilkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBottledBreastMilkViewController.swift; sourceTree = "<group>"; };
+		378938BA1DFD392E002C2F7A /* BMilkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMilkViewController.swift; sourceTree = "<group>"; };
 		3793D8621DDACAB400AF87A8 /* BabyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3793D8651DDACAB400AF87A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3793D86C1DDACAB400AF87A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +104,7 @@
 		37F7766E1DE2EF1500557F9A /* BRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRecordViewController.swift; sourceTree = "<group>"; };
 		37F776701DE2EF5C00557F9A /* BScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BScheduleViewController.swift; sourceTree = "<group>"; };
 		37F776721DE2EF6500557F9A /* BMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMineViewController.swift; sourceTree = "<group>"; };
+		37F776741DE3361200557F9A /* JSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSegmentControl.swift; sourceTree = "<group>"; };
 		519F11A5A333A296BBC0B454 /* Pods-BabyCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyCare/Pods-BabyCare.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4AB3BB0D336FE9A5605557 /* Pods-BabyCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyCare/Pods-BabyCare.release.xcconfig"; sourceTree = "<group>"; };
 		5D8F9DA3FE7DC483C8A95E72 /* Pods_BabyCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +252,9 @@
 			children = (
 				3793D88A1DDACAFE00AF87A8 /* BMainViewController.swift */,
 				37F7766E1DE2EF1500557F9A /* BRecordViewController.swift */,
+				378938B61DFD38C7002C2F7A /* BBreastMilkViewController.swift */,
+				378938B81DFD390F002C2F7A /* BBottledBreastMilkViewController.swift */,
+				378938BA1DFD392E002C2F7A /* BMilkViewController.swift */,
 				37F776701DE2EF5C00557F9A /* BScheduleViewController.swift */,
 				37F776721DE2EF6500557F9A /* BMineViewController.swift */,
 			);
@@ -251,6 +264,7 @@
 		3793D88B1DDACAFE00AF87A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				371F9BF41E014D0300A7B996 /* JBreastMilkDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				37F7766C1DE2C28400557F9A /* BMainTabBar.swift */,
+				37F776741DE3361200557F9A /* JSegmentControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,7 +439,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4CAA92C582FB506401B26659 /* [CP] Copy Pods Resources */ = {
@@ -472,12 +487,15 @@
 				37F776731DE2EF6500557F9A /* BMineViewController.swift in Sources */,
 				37F7766F1DE2EF1500557F9A /* BRecordViewController.swift in Sources */,
 				3793D8A01DDACAFE00AF87A8 /* JBaseTableViewCell.swift in Sources */,
+				378938B91DFD390F002C2F7A /* BBottledBreastMilkViewController.swift in Sources */,
 				3793D8661DDACAB400AF87A8 /* AppDelegate.swift in Sources */,
 				3793D8A71DDACAFE00AF87A8 /* JPullRefreshViewController.swift in Sources */,
 				3759CDE21DDD96DF006BE20B /* BUser.swift in Sources */,
 				3793D89E1DDACAFE00AF87A8 /* JCacheManager.m in Sources */,
 				3793D89C1DDACAFE00AF87A8 /* UIView+Extension.swift in Sources */,
+				378938BB1DFD392E002C2F7A /* BMilkViewController.swift in Sources */,
 				3793D8981DDACAFE00AF87A8 /* JDataModel.swift in Sources */,
+				37F776751DE3361200557F9A /* JSegmentControl.swift in Sources */,
 				3759CDE01DDCCBBE006BE20B /* Entity.swift in Sources */,
 				37F7766B1DE1FABE00557F9A /* JWebViewController.swift in Sources */,
 				3793D8A21DDACAFE00AF87A8 /* JHttpTableViewController.swift in Sources */,
@@ -485,12 +503,14 @@
 				37F7766D1DE2C28400557F9A /* BMainTabBar.swift in Sources */,
 				3793D8A41DDACAFE00AF87A8 /* JNavigationController.swift in Sources */,
 				37E873861DE02588008A99F6 /* Hud.swift in Sources */,
+				371F9BF51E014D0300A7B996 /* JBreastMilkDataModel.swift in Sources */,
 				3793D89D1DDACAFE00AF87A8 /* Util.swift in Sources */,
 				3793D8991DDACAFE00AF87A8 /* String.swift in Sources */,
 				3793D89B1DDACAFE00AF87A8 /* UIImage+Extension.swift in Sources */,
 				3793D8971DDACAFE00AF87A8 /* HttpManager.swift in Sources */,
 				3724B2191DE18D42008D5EB3 /* BRegisterViewController.swift in Sources */,
 				37BDE6541DDAD392009C98CE /* Macros.swift in Sources */,
+				378938B71DFD38C7002C2F7A /* BBreastMilkViewController.swift in Sources */,
 				3793D89F1DDACAFE00AF87A8 /* BMainViewController.swift in Sources */,
 				37BDE65C1DDAFB82009C98CE /* BLoginViewController.swift in Sources */,
 				3793D8A81DDACAFE00AF87A8 /* JRefreshView.swift in Sources */,

@@ -12,6 +12,10 @@ class BScheduleViewController: JBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        label.text = "行程"
+        self.view.addSubview(label)
+        self.view.backgroundColor = UIColor.purple
     }
 }
