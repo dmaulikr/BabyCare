@@ -10,7 +10,8 @@ import Foundation
 
 let userCacheKey = "userCacheKey"
 
-let USER_SESSION_CHANGED = "user_session_changed"
+let UserInfoUpdateNotification = NSNotification.Name(rawValue: "app.bb.userinfo.update")
+
 
 class BUserSession{
     
@@ -33,7 +34,7 @@ class BUserSession{
     var user: BUser?{
         didSet{
             JCacheManager.sharedInstance().setCache(user, forKey: userCacheKey)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: USER_SESSION_CHANGED), object: nil)
+            NotificationCenter.default.post(name: UserInfoUpdateNotification, object: nil)
         }
     }
     

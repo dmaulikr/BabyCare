@@ -9,24 +9,31 @@
 import UIKit
 
 class JBreastMilkEntity: Entity {
-    
+    var createTime: String?
+    var id: String?
+    var babyId: String?
+    var left: String?
+    var right: String?
 }
 
 class JBreastMilkDataModel: JDataModel {
     
     override var limitedCount: Int{
-        return 20
+        return 15
     }
     
+    var babyId: String?
+    
+    
     override func requestUrl() -> String {
-        return ""
+        return "breastmilk"
     }
     override func param() -> Dictionary<String, String> {
-        return [:]
+        return ["babyid": self.babyId!]
     }
     
     override func cacheKey() -> String? {
-        return ""
+        return "JBreastMilkDataModel"
     }
     
     override func entityData(data:Dictionary<String, Any>) -> Any? {

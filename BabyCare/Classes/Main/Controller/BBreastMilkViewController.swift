@@ -10,37 +10,59 @@ import UIKit
 
 class BBreastMilkViewController: JPullRefreshLoadMoreViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        label.text = "母乳"
-        self.view.addSubview(label)
-        self.view.backgroundColor = UIColor.red
-        
-        
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: BabyChanged, object: nil)
+    }
+    
+    override func refreshData() {
+        let dataModel = self.dataModel as! JBreastMilkDataModel
+        dataModel.babyId = currentBaby?.bid
+        super.refreshData()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if self.dataModel.canLoadMore {
+            return 2
+        }
+        return 1
     }
     
     override func createDataModel() -> JDataModel {
         let dataModel: JBreastMilkDataModel = JBreastMilkDataModel()
+        dataModel.babyId = currentBaby?.bid
         return dataModel
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return 1
+        }else{
+            return self.dataModel.itemCount
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 1 {
+            return self.loadMoreCell!
+        }
+        let identifier = "BBreastMilkTableViewCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? BBreastMilkTableViewCell
+        if cell == nil {
+            cell = BBreastMilkTableViewCell(style: .default, reuseIdentifier: identifier)
+        }
+        cell?.breastMilk = self.dataModel.item(index: indexPath.row) as! JBreastMilkEntity?
+        return cell!
     }
-    */
-
+  
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            return (self.loadMoreCell?.cellHeight)!
+        }else{
+            return BBreastMilkTableViewCell.cellHeightWith(data: nil)
+        }
+    }
 }

@@ -37,6 +37,11 @@ class JSegmentControl: UIView {
     convenience init(with titles: [String]){
         self.init(frame:CGRect(x: 0, y: 0, width: Util.screenWidth(), height: 28))
         assert(titles.count > 0, "segment count error")
+        
+        let topLine = UIView(frame: CGRect(x: 0, y: 0, width: self.width, height: 0.5))
+        topLine.backgroundColor = UIColor.colorWithHex(hex: "333333")
+        self.addSubview(topLine)
+        
         let width = (self.width - CGFloat(titles.count) * 0.5)/CGFloat(titles.count)
         
         flagView = UIView(frame: CGRect(x: 0, y: self.height - 2, width: width, height: 2))

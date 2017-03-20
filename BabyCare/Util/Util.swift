@@ -47,6 +47,10 @@ class Util{
         return UIBarButtonItem(customView: button)
     }
     
+    class func rasterizationScale() -> CGFloat{
+        return UIScreen.main.scale
+    }
+    
     private class func barButton(title:String?, target:Any, action:Selector)->UIButton{
         let button = UIButton(type: .custom)
         button.setTitle(title, for: UIControlState.normal)

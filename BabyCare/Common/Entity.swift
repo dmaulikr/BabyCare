@@ -27,7 +27,7 @@ class Entity: NSObject, NSCoding{
 
     func entity(with:Dictionary<String, Any>){
         for case let (label?, _) in mirror.children {
-            let dicValue = with[label]
+            let dicValue = with[label.lowercased()]
             if let _ = dicValue {
                 if dicValue is Int || dicValue is String || dicValue is Float {
                     self.setValue(dicValue, forKey: label)

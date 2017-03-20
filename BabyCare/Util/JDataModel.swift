@@ -15,7 +15,7 @@ class JDataModel{
     var canLoadMore: Bool = false
     var loading: Bool = false
 
-    var data: AnyObject? = nil
+    var data: AnyObject?
     var itemCount: Int = 0
     
     var reload: Bool = true{
@@ -85,20 +85,21 @@ class JDataModel{
         if let ret = data?["data"] {
             if ret is Array<AnyObject>{
                 var retArray = [AnyObject]()
-                
-                if retArray.count >= limitedCount {
+                let tempArray = ret as! [AnyObject]
+                if tempArray.count >= limitedCount {
                     canLoadMore = true
                 }else{
                     canLoadMore = false
                 }
+//                if retArray == nil {return self}
                 
-                var array = self.data as! [AnyObject]
                 
                 for i in 0 ..< (ret as! Array<AnyObject>).count{
-//                    retArray.replaceObject(at: i, with: self.entityData(data: retArray[i]))
-                    retArray[i] = self.entityData(data: (ret as! Array<Any>)[i] as! Dictionary<String, Any>) as AnyObject
+                    retArray.append(self.entityData(data: (ret as! Array<Any>)[i] as! Dictionary<String, Any>) as AnyObject)
                 }
                 if !reload {
+                    var array = self.data as! [AnyObject]
+
                     array += retArray
                     self.data = array as AnyObject?
                 }else{

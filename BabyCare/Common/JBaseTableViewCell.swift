@@ -25,10 +25,6 @@ class JBaseTableViewCell: UITableViewCell {
     
     var separatorLineView: JOnePixLineView?
     
-    class func cellHeight(data: AnyObject?) -> CGFloat{
-        return 44
-    }
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -46,5 +42,8 @@ class JBaseTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
+    }
+    class func cellHeightWith(data: AnyObject?) -> CGFloat{
+        return 44.0
     }
 }

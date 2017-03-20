@@ -28,7 +28,7 @@ class JLoadMoreTableViewCell: UITableViewCell {
         }
     }
     
-    let cellHeight = 44
+    let cellHeight: CGFloat = 44.0
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)        

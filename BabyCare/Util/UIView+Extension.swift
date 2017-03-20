@@ -72,11 +72,23 @@ extension UIView{
     }
     
     var origin: CGPoint{
-        get{
+        get {
             return self.frame.origin
         }
-        set{
+        set(origin) {
             self.frame = CGRect(x: origin.x, y: origin.y, width: self.frame.size.width, height: self.frame.size.height)
+        }
+    }
+    
+    var cornerRadius: CGFloat{
+        get {
+            return self.layer.cornerRadius
+        }
+        set(cornerRadius) {
+            self.layer.masksToBounds = true
+            self.layer.shouldRasterize = true
+            self.layer.rasterizationScale = Util.rasterizationScale()
+            self.layer.cornerRadius = cornerRadius
         }
     }
 }
