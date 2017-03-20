@@ -1,15 +1,14 @@
 //
-//  JMainBabiesScrollView.swift
+//  BMainBabiesScrollView.swift
 //  BabyCare
 //
-//  Created by Neo on 2017/3/8.
+//  Created by Neo on 2017/3/20.
 //  Copyright © 2017年 JL. All rights reserved.
 //
 
 import UIKit
 
-
-class JMainBabyAvatarView: UIControl {
+class BMainBabyAvatarView: UIControl {
     
     var nameLabel: UILabel?
     
@@ -21,7 +20,7 @@ class JMainBabyAvatarView: UIControl {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-     self.backgroundColor = UIColor.colorWithHex(hex: "999999")   
+        self.backgroundColor = UIColor.colorWithHex(hex: "999999")   
         nameLabel = UILabel(frame: self.bounds)
         nameLabel?.font = UIFont.systemFont(ofSize: 13)
         nameLabel?.textColor = UIColor.colorWithHex(hex: "")
@@ -38,13 +37,13 @@ class JMainBabyAvatarView: UIControl {
     }
 }
 
-protocol JMainBabiesScrollViewDelegate{
+protocol BMainBabiesScrollViewDelegate{
     func babiesScrollViewClicked(index: Int)
 }
 
-class JMainBabiesScrollView: UIScrollView {
+class BMainBabiesScrollView: UIScrollView {
 
-    var clickedDelegate: JMainBabiesScrollViewDelegate?
+    var clickedDelegate: BMainBabiesScrollViewDelegate?
     
     var selectedIndex: Int? = -1{
         willSet{
@@ -69,7 +68,7 @@ class JMainBabiesScrollView: UIScrollView {
                 
                 let textWidth = baby.babyname?.size(font: UIFont.systemFont(ofSize: 13), constrainedSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: self.height)).width
                 
-                let avatarView = JMainBabyAvatarView(frame: CGRect(x: right, y: 0, width: textWidth! + 30, height: self.height))
+                let avatarView = BMainBabyAvatarView(frame: CGRect(x: right, y: 0, width: textWidth! + 30, height: self.height))
                 right = avatarView.right + 8
                 avatarView.baby = baby
                 self.addSubview(avatarView)
@@ -84,8 +83,8 @@ class JMainBabiesScrollView: UIScrollView {
             self.contentSize = CGSize(width: max(right+1, self.width+1), height: self.height)
         }
     }
-
-    func clicked(control: JMainBabyAvatarView) {
+    
+    func clicked(control: BMainBabyAvatarView) {
         let tag = control.tag - 100
         if tag == selectedIndex{return}
         clickedDelegate?.babiesScrollViewClicked(index: tag)

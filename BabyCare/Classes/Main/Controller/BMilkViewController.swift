@@ -12,6 +12,7 @@ class BMilkViewController: JPullRefreshLoadMoreViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.autoresizingMask = .flexibleHeight
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         label.text = "牛奶"

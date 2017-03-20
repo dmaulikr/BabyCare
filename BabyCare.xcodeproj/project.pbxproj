@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		371F9BF51E014D0300A7B996 /* JBreastMilkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F9BF41E014D0300A7B996 /* JBreastMilkDataModel.swift */; };
 		3724B2191DE18D42008D5EB3 /* BRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724B2181DE18D42008D5EB3 /* BRegisterViewController.swift */; };
 		3724B21D1DE18F91008D5EB3 /* common_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B21B1DE18F91008D5EB3 /* common_close@2x.png */; };
 		3724B21E1DE18F91008D5EB3 /* common_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B21C1DE18F91008D5EB3 /* common_close@3x.png */; };
 		3724B2221DE1937E008D5EB3 /* register_verifyCode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B2201DE1937E008D5EB3 /* register_verifyCode@2x.png */; };
 		3724B2231DE1937E008D5EB3 /* register_verifyCode@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B2211DE1937E008D5EB3 /* register_verifyCode@3x.png */; };
-		37389C2A1E70004E00913D26 /* JMainBabiesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37389C291E70004E00913D26 /* JMainBabiesScrollView.swift */; };
 		37389C2C1E7037D400913D26 /* BBreastMilkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37389C2B1E7037D400913D26 /* BBreastMilkTableViewCell.swift */; };
 		3759CDD91DDC726A006BE20B /* login_password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3759CDD51DDC726A006BE20B /* login_password@2x.png */; };
 		3759CDDA1DDC726A006BE20B /* login_password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3759CDD61DDC726A006BE20B /* login_password@3x.png */; };
@@ -44,6 +42,11 @@
 		3793D8A61DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8941DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift */; };
 		3793D8A71DDACAFE00AF87A8 /* JPullRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8951DDACAFE00AF87A8 /* JPullRefreshViewController.swift */; };
 		3793D8A81DDACAFE00AF87A8 /* JRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8961DDACAFE00AF87A8 /* JRefreshView.swift */; };
+		37961A981E800C4500F5AB67 /* JCoverShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37961A971E800C4500F5AB67 /* JCoverShadowView.swift */; };
+		37961A9A1E800CE100F5AB67 /* BBreastMilkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37961A991E800CE100F5AB67 /* BBreastMilkAddView.swift */; };
+		37961A9C1E800D1500F5AB67 /* BBreastMilkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37961A9B1E800D1500F5AB67 /* BBreastMilkDataModel.swift */; };
+		37961A9E1E800DE800F5AB67 /* BSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37961A9D1E800DE800F5AB67 /* BSegmentControl.swift */; };
+		37961AA01E800E5600F5AB67 /* BMainBabiesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37961A9F1E800E5600F5AB67 /* BMainBabiesScrollView.swift */; };
 		37BDE6541DDAD392009C98CE /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BDE6531DDAD392009C98CE /* Macros.swift */; };
 		37BDE65C1DDAFB82009C98CE /* BLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BDE65B1DDAFB82009C98CE /* BLoginViewController.swift */; };
 		37E873861DE02588008A99F6 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E873851DE02588008A99F6 /* Hud.swift */; };
@@ -52,18 +55,15 @@
 		37F7766F1DE2EF1500557F9A /* BRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F7766E1DE2EF1500557F9A /* BRecordViewController.swift */; };
 		37F776711DE2EF5C00557F9A /* BScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F776701DE2EF5C00557F9A /* BScheduleViewController.swift */; };
 		37F776731DE2EF6500557F9A /* BMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F776721DE2EF6500557F9A /* BMineViewController.swift */; };
-		37F776751DE3361200557F9A /* JSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F776741DE3361200557F9A /* JSegmentControl.swift */; };
 		4A6399BB36D2624017FB5A28 /* Pods_BabyCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8F9DA3FE7DC483C8A95E72 /* Pods_BabyCare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		371F9BF41E014D0300A7B996 /* JBreastMilkDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBreastMilkDataModel.swift; sourceTree = "<group>"; };
 		3724B2181DE18D42008D5EB3 /* BRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRegisterViewController.swift; sourceTree = "<group>"; };
 		3724B21B1DE18F91008D5EB3 /* common_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_close@2x.png"; sourceTree = "<group>"; };
 		3724B21C1DE18F91008D5EB3 /* common_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_close@3x.png"; sourceTree = "<group>"; };
 		3724B2201DE1937E008D5EB3 /* register_verifyCode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_verifyCode@2x.png"; sourceTree = "<group>"; };
 		3724B2211DE1937E008D5EB3 /* register_verifyCode@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_verifyCode@3x.png"; sourceTree = "<group>"; };
-		37389C291E70004E00913D26 /* JMainBabiesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMainBabiesScrollView.swift; sourceTree = "<group>"; };
 		37389C2B1E7037D400913D26 /* BBreastMilkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBreastMilkTableViewCell.swift; sourceTree = "<group>"; };
 		3759CDD51DDC726A006BE20B /* login_password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password@2x.png"; sourceTree = "<group>"; };
 		3759CDD61DDC726A006BE20B /* login_password@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password@3x.png"; sourceTree = "<group>"; };
@@ -98,6 +98,11 @@
 		3793D8941DDACAFE00AF87A8 /* JPullRefreshLoadMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPullRefreshLoadMoreViewController.swift; sourceTree = "<group>"; };
 		3793D8951DDACAFE00AF87A8 /* JPullRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPullRefreshViewController.swift; sourceTree = "<group>"; };
 		3793D8961DDACAFE00AF87A8 /* JRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRefreshView.swift; sourceTree = "<group>"; };
+		37961A971E800C4500F5AB67 /* JCoverShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCoverShadowView.swift; sourceTree = "<group>"; };
+		37961A991E800CE100F5AB67 /* BBreastMilkAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBreastMilkAddView.swift; sourceTree = "<group>"; };
+		37961A9B1E800D1500F5AB67 /* BBreastMilkDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBreastMilkDataModel.swift; sourceTree = "<group>"; };
+		37961A9D1E800DE800F5AB67 /* BSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSegmentControl.swift; sourceTree = "<group>"; };
+		37961A9F1E800E5600F5AB67 /* BMainBabiesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMainBabiesScrollView.swift; sourceTree = "<group>"; };
 		37BDE6531DDAD392009C98CE /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		37BDE65B1DDAFB82009C98CE /* BLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLoginViewController.swift; sourceTree = "<group>"; };
 		37E873851DE02588008A99F6 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
@@ -106,7 +111,6 @@
 		37F7766E1DE2EF1500557F9A /* BRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRecordViewController.swift; sourceTree = "<group>"; };
 		37F776701DE2EF5C00557F9A /* BScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BScheduleViewController.swift; sourceTree = "<group>"; };
 		37F776721DE2EF6500557F9A /* BMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMineViewController.swift; sourceTree = "<group>"; };
-		37F776741DE3361200557F9A /* JSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSegmentControl.swift; sourceTree = "<group>"; };
 		519F11A5A333A296BBC0B454 /* Pods-BabyCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyCare/Pods-BabyCare.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4AB3BB0D336FE9A5605557 /* Pods-BabyCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyCare/Pods-BabyCare.release.xcconfig"; sourceTree = "<group>"; };
 		5D8F9DA3FE7DC483C8A95E72 /* Pods_BabyCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,7 +269,7 @@
 		3793D88B1DDACAFE00AF87A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				371F9BF41E014D0300A7B996 /* JBreastMilkDataModel.swift */,
+				37961A9B1E800D1500F5AB67 /* BBreastMilkDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,9 +278,10 @@
 			isa = PBXGroup;
 			children = (
 				37F7766C1DE2C28400557F9A /* BMainTabBar.swift */,
-				37F776741DE3361200557F9A /* JSegmentControl.swift */,
-				37389C291E70004E00913D26 /* JMainBabiesScrollView.swift */,
+				37961A9D1E800DE800F5AB67 /* BSegmentControl.swift */,
+				37961A9F1E800E5600F5AB67 /* BMainBabiesScrollView.swift */,
 				37389C2B1E7037D400913D26 /* BBreastMilkTableViewCell.swift */,
+				37961A991E800CE100F5AB67 /* BBreastMilkAddView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				3793D8951DDACAFE00AF87A8 /* JPullRefreshViewController.swift */,
 				3793D8961DDACAFE00AF87A8 /* JRefreshView.swift */,
 				3759CDDF1DDCCBBE006BE20B /* Entity.swift */,
+				37961A971E800C4500F5AB67 /* JCoverShadowView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -486,7 +492,9 @@
 				3793D8A51DDACAFE00AF87A8 /* JOnePixLineView.swift in Sources */,
 				37F776711DE2EF5C00557F9A /* BScheduleViewController.swift in Sources */,
 				3793D8A11DDACAFE00AF87A8 /* JBaseViewController.swift in Sources */,
+				37961A9A1E800CE100F5AB67 /* BBreastMilkAddView.swift in Sources */,
 				3793D8A31DDACAFE00AF87A8 /* JLoadMoreTableViewCell.swift in Sources */,
+				37961A9E1E800DE800F5AB67 /* BSegmentControl.swift in Sources */,
 				37F776731DE2EF6500557F9A /* BMineViewController.swift in Sources */,
 				37F7766F1DE2EF1500557F9A /* BRecordViewController.swift in Sources */,
 				3793D8A01DDACAFE00AF87A8 /* JBaseTableViewCell.swift in Sources */,
@@ -497,21 +505,21 @@
 				3793D89C1DDACAFE00AF87A8 /* UIView+Extension.swift in Sources */,
 				378938BB1DFD392E002C2F7A /* BMilkViewController.swift in Sources */,
 				3793D8981DDACAFE00AF87A8 /* JDataModel.swift in Sources */,
-				37F776751DE3361200557F9A /* JSegmentControl.swift in Sources */,
 				3759CDE01DDCCBBE006BE20B /* Entity.swift in Sources */,
-				37389C2A1E70004E00913D26 /* JMainBabiesScrollView.swift in Sources */,
 				37F7766B1DE1FABE00557F9A /* JWebViewController.swift in Sources */,
 				3793D8A21DDACAFE00AF87A8 /* JHttpTableViewController.swift in Sources */,
+				37961AA01E800E5600F5AB67 /* BMainBabiesScrollView.swift in Sources */,
 				3772B8751DDF777D00026276 /* BUserSession.swift in Sources */,
 				37F7766D1DE2C28400557F9A /* BMainTabBar.swift in Sources */,
 				3793D8A41DDACAFE00AF87A8 /* JNavigationController.swift in Sources */,
+				37961A981E800C4500F5AB67 /* JCoverShadowView.swift in Sources */,
 				37E873861DE02588008A99F6 /* Hud.swift in Sources */,
-				371F9BF51E014D0300A7B996 /* JBreastMilkDataModel.swift in Sources */,
 				3793D89D1DDACAFE00AF87A8 /* Util.swift in Sources */,
 				3793D8991DDACAFE00AF87A8 /* String.swift in Sources */,
 				37389C2C1E7037D400913D26 /* BBreastMilkTableViewCell.swift in Sources */,
 				3793D89B1DDACAFE00AF87A8 /* UIImage+Extension.swift in Sources */,
 				3793D8971DDACAFE00AF87A8 /* HttpManager.swift in Sources */,
+				37961A9C1E800D1500F5AB67 /* BBreastMilkDataModel.swift in Sources */,
 				3724B2191DE18D42008D5EB3 /* BRegisterViewController.swift in Sources */,
 				37BDE6541DDAD392009C98CE /* Macros.swift in Sources */,
 				378938B71DFD38C7002C2F7A /* BBreastMilkViewController.swift in Sources */,

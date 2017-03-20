@@ -1,23 +1,23 @@
 //
-//  JSegmentControl.swift
+//  BSegmentControl.swift
 //  BabyCare
 //
-//  Created by Neo on 2016/11/21.
-//  Copyright © 2016年 JL. All rights reserved.
+//  Created by Neo on 2017/3/20.
+//  Copyright © 2017年 JL. All rights reserved.
 //
 
 import UIKit
 
-protocol JSegmentControlDelegate {
+protocol BSegmentControlDelegate {
     func segmentSelected(index: Int)
 }
 
-class JSegmentControl: UIView {
-
+class BSegmentControl: UIView {
+    
     var items = [UIButton]()
     var flagView: UIView?
     
-    var delegate: JSegmentControlDelegate?
+    var delegate: BSegmentControlDelegate?
     var selectedIndex: Int = 0{
         willSet{
             let preBtn = items[selectedIndex]

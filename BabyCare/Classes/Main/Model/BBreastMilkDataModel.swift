@@ -1,14 +1,14 @@
 //
-//  JBreastMilkDataModel.swift
+//  BBreastMilkDataModel.swift
 //  BabyCare
 //
-//  Created by Neo on 2016/12/14.
-//  Copyright © 2016年 JL. All rights reserved.
+//  Created by Neo on 2017/3/20.
+//  Copyright © 2017年 JL. All rights reserved.
 //
 
 import UIKit
 
-class JBreastMilkEntity: Entity {
+class BBreastMilkEntity: Entity {
     var createTime: String?
     var id: String?
     var babyId: String?
@@ -16,8 +16,7 @@ class JBreastMilkEntity: Entity {
     var right: String?
 }
 
-class JBreastMilkDataModel: JDataModel {
-    
+class BBreastMilkDataModel: JDataModel {
     override var limitedCount: Int{
         return 15
     }
@@ -37,7 +36,6 @@ class JBreastMilkDataModel: JDataModel {
     }
     
     override func entityData(data:Dictionary<String, Any>) -> Any? {
-        return JBreastMilkEntity.entityElement(data: data)
+        return BBreastMilkEntity.entityElement(data: data)
     }
-
 }

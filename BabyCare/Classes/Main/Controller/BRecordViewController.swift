@@ -11,28 +11,28 @@ import UIKit
 let BabyChanged = NSNotification.Name("app.bb.babychanged")
 var currentBaby: BBaby?
 
-class BRecordViewController: JBaseViewController, JSegmentControlDelegate, JMainBabiesScrollViewDelegate {
+class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMainBabiesScrollViewDelegate {
     
     
-    var babiesView: JMainBabiesScrollView?
+    var babiesView: BMainBabiesScrollView?
     
     var preViewController: JBaseViewController?
     
     lazy var _breastMilkViewController: BBreastMilkViewController = BBreastMilkViewController()
     lazy var _milkViewController: BMilkViewController = BMilkViewController()
     
-    var segmentControl: JSegmentControl?
+    var segmentControl: BSegmentControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        babiesView = JMainBabiesScrollView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 40))
+        babiesView = BMainBabiesScrollView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 40))
                 
         babiesView?.clickedDelegate = self
         self.view.addSubview(babiesView!)
         self.updateCurrentBaby(index: 0)
         
-        segmentControl = JSegmentControl(with: ["母乳喂养","奶瓶喂养"])
+        segmentControl = BSegmentControl(with: ["母乳喂养","奶瓶喂养"])
         segmentControl?.origin = CGPoint(x: 0, y: (babiesView?.bottom)!)
         segmentControl?.delegate = self
         self.view.addSubview(segmentControl!)

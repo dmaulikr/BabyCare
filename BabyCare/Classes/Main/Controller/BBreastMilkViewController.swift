@@ -13,12 +13,24 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.autoresizingMask = .flexibleHeight
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: BabyChanged, object: nil)
+        self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 60))
+
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 60))
+        
+        let addButton = UIButton(frame: CGRect(x: (headerView.width - 40)/2.0, y: 10, width: 40, height: 40))
+        addButton.cornerRadius = 20
+        addButton.backgroundColor = UIColor.red
+        headerView.addSubview(addButton)
+        
+        addButton.addTarget(self, action: #selector(add), for: .touchUpInside)
+        
+        self.tableView.tableHeaderView = headerView
     }
     
     override func refreshData() {
-        let dataModel = self.dataModel as! JBreastMilkDataModel
+        let dataModel = self.dataModel as! BBreastMilkDataModel
         dataModel.babyId = currentBaby?.bid
         super.refreshData()
     }
@@ -31,7 +43,7 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController {
     }
     
     override func createDataModel() -> JDataModel {
-        let dataModel: JBreastMilkDataModel = JBreastMilkDataModel()
+        let dataModel: BBreastMilkDataModel = BBreastMilkDataModel()
         dataModel.babyId = currentBaby?.bid
         return dataModel
     }
@@ -54,7 +66,17 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController {
         if cell == nil {
             cell = BBreastMilkTableViewCell(style: .default, reuseIdentifier: identifier)
         }
-        cell?.breastMilk = self.dataModel.item(index: indexPath.row) as! JBreastMilkEntity?
+        if indexPath.row > 0 {
+            let preEntity = self.dataModel.item(index: indexPath.row - 1) as! BBreastMilkEntity
+            let preDate = Date(timeIntervalSince1970: Double(preEntity.createTime!)!)
+            
+            let currentEntity = self.dataModel.item(index: indexPath.row) as! BBreastMilkEntity
+            let currentDate = Date(timeIntervalSince1970: Double(currentEntity.createTime!)!)
+            
+            let isSame = Calendar.current.isDate(preDate, inSameDayAs: currentDate)
+            cell?.hideDate(hidden: isSame)
+        }
+        cell?.breastMilk = self.dataModel.item(index: indexPath.row) as! BBreastMilkEntity?
         return cell!
     }
   
@@ -64,5 +86,10 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController {
         }else{
             return BBreastMilkTableViewCell.cellHeightWith(data: nil)
         }
+    }
+    
+    //MARK: -- xxx
+    func add(button: UIButton) {
+        Hud.show(content: "增加", withTime: 2)
     }
 }
