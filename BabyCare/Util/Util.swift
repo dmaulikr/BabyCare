@@ -16,6 +16,11 @@ func PerformSelector(delay: Double,execute: @escaping ()->()){
 }
 
 class Util{
+    
+    class func window() -> UIWindow {
+        return (UIApplication.shared.delegate as! AppDelegate).window!
+    }
+    
     class func getCurrentDeviceUUID() -> String{        
         return (UIDevice.current.identifierForVendor?.uuidString)!
     }

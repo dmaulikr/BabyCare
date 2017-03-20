@@ -27,7 +27,7 @@ class BSegmentControl: UIView {
         didSet{
             let currentBtn = items[selectedIndex]
             currentBtn.setTitleColor(UIColor.colorWithHexAndAlpha(hex: "6ec6e2", alpha: 1), for: .normal)
-            UIView.animate(withDuration: 0.25, animations: {
+            UIView.animate(withDuration: 0.15, animations: {
                 [weak self] in
                 self?.flagView?.left = (currentBtn.width+0.5) * CGFloat((self?.selectedIndex)!)
             })
