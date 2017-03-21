@@ -51,4 +51,8 @@ class JBaseViewController: UIViewController {
     override var preferredInterfaceOrientationForPresentation:UIInterfaceOrientation{
         return .portrait
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }

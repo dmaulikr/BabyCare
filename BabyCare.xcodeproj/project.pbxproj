@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371E9F9B1E80FA4500242B74 /* BBottledMilkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E9F9A1E80FA4500242B74 /* BBottledMilkAddView.swift */; };
+		371E9F9D1E8103DC00242B74 /* BBottledMilkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E9F9C1E8103DC00242B74 /* BBottledMilkDataModel.swift */; };
+		371E9F9F1E81163600242B74 /* BBottledMilkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E9F9E1E81163600242B74 /* BBottledMilkTableViewCell.swift */; };
 		3724B2191DE18D42008D5EB3 /* BRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3724B2181DE18D42008D5EB3 /* BRegisterViewController.swift */; };
 		3724B21D1DE18F91008D5EB3 /* common_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B21B1DE18F91008D5EB3 /* common_close@2x.png */; };
 		3724B21E1DE18F91008D5EB3 /* common_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3724B21C1DE18F91008D5EB3 /* common_close@3x.png */; };
@@ -21,7 +24,7 @@
 		3759CDE21DDD96DF006BE20B /* BUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759CDE11DDD96DF006BE20B /* BUser.swift */; };
 		3772B8751DDF777D00026276 /* BUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3772B8741DDF777D00026276 /* BUserSession.swift */; };
 		378938B71DFD38C7002C2F7A /* BBreastMilkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378938B61DFD38C7002C2F7A /* BBreastMilkViewController.swift */; };
-		378938BB1DFD392E002C2F7A /* BMilkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378938BA1DFD392E002C2F7A /* BMilkViewController.swift */; };
+		378938BB1DFD392E002C2F7A /* BBottledMilkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378938BA1DFD392E002C2F7A /* BBottledMilkViewController.swift */; };
 		3793D8661DDACAB400AF87A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D8651DDACAB400AF87A8 /* AppDelegate.swift */; };
 		3793D86D1DDACAB400AF87A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3793D86C1DDACAB400AF87A8 /* Assets.xcassets */; };
 		3793D8971DDACAFE00AF87A8 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793D87D1DDACAFE00AF87A8 /* HttpManager.swift */; };
@@ -59,6 +62,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371E9F9A1E80FA4500242B74 /* BBottledMilkAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBottledMilkAddView.swift; sourceTree = "<group>"; };
+		371E9F9C1E8103DC00242B74 /* BBottledMilkDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBottledMilkDataModel.swift; sourceTree = "<group>"; };
+		371E9F9E1E81163600242B74 /* BBottledMilkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBottledMilkTableViewCell.swift; sourceTree = "<group>"; };
 		3724B2181DE18D42008D5EB3 /* BRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRegisterViewController.swift; sourceTree = "<group>"; };
 		3724B21B1DE18F91008D5EB3 /* common_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_close@2x.png"; sourceTree = "<group>"; };
 		3724B21C1DE18F91008D5EB3 /* common_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "common_close@3x.png"; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 		3759CDE11DDD96DF006BE20B /* BUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUser.swift; sourceTree = "<group>"; };
 		3772B8741DDF777D00026276 /* BUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUserSession.swift; sourceTree = "<group>"; };
 		378938B61DFD38C7002C2F7A /* BBreastMilkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBreastMilkViewController.swift; sourceTree = "<group>"; };
-		378938BA1DFD392E002C2F7A /* BMilkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMilkViewController.swift; sourceTree = "<group>"; };
+		378938BA1DFD392E002C2F7A /* BBottledMilkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBottledMilkViewController.swift; sourceTree = "<group>"; };
 		3793D8621DDACAB400AF87A8 /* BabyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3793D8651DDACAB400AF87A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3793D86C1DDACAB400AF87A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -259,7 +265,7 @@
 				3793D88A1DDACAFE00AF87A8 /* BMainViewController.swift */,
 				37F7766E1DE2EF1500557F9A /* BRecordViewController.swift */,
 				378938B61DFD38C7002C2F7A /* BBreastMilkViewController.swift */,
-				378938BA1DFD392E002C2F7A /* BMilkViewController.swift */,
+				378938BA1DFD392E002C2F7A /* BBottledMilkViewController.swift */,
 				37F776701DE2EF5C00557F9A /* BScheduleViewController.swift */,
 				37F776721DE2EF6500557F9A /* BMineViewController.swift */,
 			);
@@ -270,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				37961A9B1E800D1500F5AB67 /* BBreastMilkDataModel.swift */,
+				371E9F9C1E8103DC00242B74 /* BBottledMilkDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +289,8 @@
 				37961A9F1E800E5600F5AB67 /* BMainBabiesScrollView.swift */,
 				37389C2B1E7037D400913D26 /* BBreastMilkTableViewCell.swift */,
 				37961A991E800CE100F5AB67 /* BBreastMilkAddView.swift */,
+				371E9F9A1E80FA4500242B74 /* BBottledMilkAddView.swift */,
+				371E9F9E1E81163600242B74 /* BBottledMilkTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -502,8 +511,11 @@
 				3793D8A71DDACAFE00AF87A8 /* JPullRefreshViewController.swift in Sources */,
 				3759CDE21DDD96DF006BE20B /* BUser.swift in Sources */,
 				3793D89E1DDACAFE00AF87A8 /* JCacheManager.m in Sources */,
+				371E9F9D1E8103DC00242B74 /* BBottledMilkDataModel.swift in Sources */,
 				3793D89C1DDACAFE00AF87A8 /* UIView+Extension.swift in Sources */,
-				378938BB1DFD392E002C2F7A /* BMilkViewController.swift in Sources */,
+				378938BB1DFD392E002C2F7A /* BBottledMilkViewController.swift in Sources */,
+				371E9F9B1E80FA4500242B74 /* BBottledMilkAddView.swift in Sources */,
+				371E9F9F1E81163600242B74 /* BBottledMilkTableViewCell.swift in Sources */,
 				3793D8981DDACAFE00AF87A8 /* JDataModel.swift in Sources */,
 				3759CDE01DDCCBBE006BE20B /* Entity.swift in Sources */,
 				37F7766B1DE1FABE00557F9A /* JWebViewController.swift in Sources */,

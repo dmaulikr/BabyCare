@@ -1,5 +1,5 @@
 //
-//  BBreastMilkViewController.swift
+//  BMilkViewController.swift
 //  BabyCare
 //
 //  Created by Neo on 2016/12/11.
@@ -8,30 +8,33 @@
 
 import UIKit
 
-class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilkAddViewDelegate {
+class BBottledMilkViewController: JPullRefreshLoadMoreViewController, BBottledMilkAddViewDelegate {
 
-    lazy var shadowView: BBreastMilkAddView = {
-        let view: BBreastMilkAddView = BBreastMilkAddView(frame: Util.window().bounds) 
+    lazy var shadowView: BBottledMilkAddView = {
+        let view: BBottledMilkAddView = BBottledMilkAddView(frame: Util.window().bounds) 
         view.delegate = self
         return view
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: BabyChanged, object: nil)
-
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 60))        
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 60))
         let addButton = UIButton(frame: CGRect(x: (headerView.width - 40)/2.0, y: 10, width: 40, height: 40))
         addButton.cornerRadius = 20
         addButton.backgroundColor = UIColor.red
-        headerView.addSubview(addButton)        
+        headerView.addSubview(addButton)
+        
         addButton.addTarget(self, action: #selector(add), for: .touchUpInside)
+        
         self.tableView.tableHeaderView = headerView
+        
     }
     
     override func refreshData() {
-        let dataModel = self.dataModel as! BBreastMilkDataModel
+        let dataModel = self.dataModel as! BBottledMilkDataModel
         dataModel.babyId = currentBaby?.bid
         super.refreshData()
     }
@@ -44,12 +47,12 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
     }
     
     override func createDataModel() -> JDataModel {
-        let dataModel: BBreastMilkDataModel = BBreastMilkDataModel()
+        let dataModel: BBottledMilkDataModel = BBottledMilkDataModel()
         dataModel.babyId = currentBaby?.bid
         return dataModel
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 1
@@ -62,32 +65,33 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
         if indexPath.section == 1 {
             return self.loadMoreCell!
         }
-        let identifier = "BBreastMilkTableViewCell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? BBreastMilkTableViewCell
+        let identifier = "BBottledMilkTableViewCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? BBottledMilkTableViewCell
         if cell == nil {
-            cell = BBreastMilkTableViewCell(style: .default, reuseIdentifier: identifier)
+            cell = BBottledMilkTableViewCell(style: .default, reuseIdentifier: identifier)
         }
         if indexPath.row > 0 {
-            let preEntity = self.dataModel.item(index: indexPath.row - 1) as! BBreastMilkEntity
+            let preEntity = self.dataModel.item(index: indexPath.row - 1) as! BBottledMilkEntity
             let preDate = Date(timeIntervalSince1970: Double(preEntity.createTime!)!)
             
-            let currentEntity = self.dataModel.item(index: indexPath.row) as! BBreastMilkEntity
+            let currentEntity = self.dataModel.item(index: indexPath.row) as! BBottledMilkEntity
             let currentDate = Date(timeIntervalSince1970: Double(currentEntity.createTime!)!)
             
             let isSame = Calendar.current.isDate(preDate, inSameDayAs: currentDate)
             cell?.hideDate(hidden: isSame)
         }
-        cell?.breastMilk = self.dataModel.item(index: indexPath.row) as! BBreastMilkEntity?
+        cell?.bottledMilk = self.dataModel.item(index: indexPath.row) as! BBottledMilkEntity?
         return cell!
     }
-  
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
             return (self.loadMoreCell?.cellHeight)!
         }else{
-            return BBreastMilkTableViewCell.cellHeightWith(data: nil)
+            return BBottledMilkTableViewCell.cellHeightWith(data: nil)
         }
     }
+    
     
     //MARK: -- xxx
     func add(button: UIButton) {
@@ -97,12 +101,10 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
         }
         shadowView.show()
     }
-    
-    //MARK: -- delegate
-    
-    func addViewDone(left: Int, right: Int) {
-        
-        HttpManager.requestAsynchronous(url: "breastmilk/add", parameters: ["babyid":(currentBaby?.bid)!,"left":String(left),"right":String(right)]) { object in
+
+    func addViewDone(amount: Int ,type: Int) {
+        print(amount)
+        HttpManager.requestAsynchronous(url: "bottledmilk/add", parameters: ["babyid":(currentBaby?.bid)!,"type":String(type),"amount":String(amount)]) { object in
             let code = object as! Dictionary<String,AnyObject>
             let c = code["code"]
             if Int(c as! NSNumber) == 0 {
@@ -110,5 +112,6 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
                 self.refreshData()
             }
         }
+        
     }
 }

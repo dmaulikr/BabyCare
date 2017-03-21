@@ -102,7 +102,7 @@ class BBreastMilkAddView: JCoverShadowView {
         rightTimeLabel?.text = "0秒"
         
         let doneButton: UIButton = UIButton(frame: CGRect(x: 60, y: (panelView?.height)! - 40, width: frame.width - 120, height: 30))
-        doneButton.setTitle("完成", for: .normal)
+        doneButton.setTitle("添加", for: .normal)
         doneButton.layer.borderColor = UIColor.colorWithHexAndAlpha(hex: "333333", alpha: 0.8).cgColor
         doneButton.cornerRadius = 5
         
@@ -114,7 +114,7 @@ class BBreastMilkAddView: JCoverShadowView {
         doneButton.layer.borderWidth = 0.5
         self.addSubview(panelView!)
         
-        self.addTarget(self, action: #selector(close), for: .touchUpInside)
+//        self.addTarget(self, action: #selector(close), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
