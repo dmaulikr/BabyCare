@@ -17,7 +17,6 @@ class Entity: NSObject, NSCoding{
             return Mirror(reflecting: self)
         }
     }
-    
     // 若是复杂数据类型 需要指定 key：value 其中key为属性名称 value 为对应的key所对应的数据类型--class name string eg：Entity
     var config: [String: String]{
         get{

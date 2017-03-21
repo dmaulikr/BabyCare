@@ -36,8 +36,7 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         self.addChildViewController(_recordController)
         self.addChildViewController(_scheduleController)
         self.addChildViewController(_mineController)
-        self.view.addSubview(_recordController.view)
-        preController = _recordController
+        
         self.title = "宝宝日记"
         
         tabBar = BMainTabBar()
@@ -47,6 +46,9 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         tabBar?.selectedIndex = 0
         self.view.addSubview(tabBar!)
         
+        _recordController.view.height = self.view.height - (tabBar?.height)!
+        self.view.addSubview(_recordController.view)
+        preController = _recordController
     }
     
     func setSelectIndex(index: Int){
@@ -65,6 +67,8 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         default:
             break
         }
+        controller.view.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - (tabBar?.height)!)
+
         self.transition(from: preController!, to: controller, duration: 0, options: .curveEaseOut, animations: {
             [weak self] in
             self?.view.bringSubview(toFront: (self?.tabBar)!)

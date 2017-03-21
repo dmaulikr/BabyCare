@@ -19,7 +19,7 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
     var preViewController: JBaseViewController?
     
     lazy var _breastMilkViewController: BBreastMilkViewController = BBreastMilkViewController()
-    lazy var _milkViewController: BMilkViewController = BMilkViewController()
+    lazy var _bottledMilkViewController: BBottledMilkViewController = BBottledMilkViewController()
     
     var segmentControl: BSegmentControl?
 
@@ -38,7 +38,7 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
         self.view.addSubview(segmentControl!)
 
         self.addChildViewController(_breastMilkViewController)
-        self.addChildViewController(_milkViewController)
+        self.addChildViewController(_bottledMilkViewController)
         
         self.view.addSubview(_breastMilkViewController.view)
         preViewController = _breastMilkViewController
