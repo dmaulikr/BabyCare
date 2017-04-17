@@ -100,7 +100,9 @@ class Hud{
         if lock {
             self.containerView?.addSubview(self.overlayView!)
         }
-        self.containerView?.addSubview(self.hudView)
+        if !(self.containerView?.subviews.contains(self.hudView))! {
+            self.containerView?.addSubview(self.hudView)
+        }
         self.hudView.layoutView(image: image, content: content, activity: activity)
         
         self.hudView.center = (self.containerView?.center)!
@@ -169,7 +171,7 @@ class HudView: UIView {
         if image != nil && activity == true {
             assert(false, "图片和菊花不能同时出现")
         }
-        let contentSize = content?.size(font: (hudContentLabel?.font)!, constrainedSize: CGSize(width: defaultHudWidth, height: CGFloat.greatestFiniteMagnitude))
+        let contentSize = content?.size(font: (hudContentLabel?.font)!, constrainedSize: CGSize(width: defaultHudWidth - 10, height: CGFloat.greatestFiniteMagnitude))
         hudContentLabel?.text = content
 
         if image != nil{
@@ -180,9 +182,7 @@ class HudView: UIView {
             hudImageView?.center = CGPoint(x: defaultHudWidth/2, y: 10+(hudImageView?.height)!/2);
             
             hudContentLabel?.top = (hudImageView?.bottom)! + 10
-            hudContentLabel?.height = (contentSize?.height)!
             
-            self.height = (hudContentLabel?.bottom)! + 10
         }else if(activity){
             hudActivityView?.isHidden = false
             hudImageView?.isHidden = true
@@ -190,26 +190,24 @@ class HudView: UIView {
             hudActivityView?.center = CGPoint(x: defaultHudWidth/2, y: 10+(hudActivityView?.height)!/2);
             
             hudContentLabel?.top = (hudActivityView?.bottom)! + 10
-            hudContentLabel?.height = (contentSize?.height)!
-            
-            self.height = (hudContentLabel?.bottom)! + 10
         }else{
             hudActivityView?.isHidden = true
             hudImageView?.isHidden = true
             
             hudContentLabel?.top = 10
-            hudContentLabel?.height = (contentSize?.height)!
-            
-            self.height = (hudContentLabel?.bottom)! + 10   
         }
+        hudContentLabel?.height = (contentSize?.height)!
         hudContentLabel?.width = defaultHudWidth - 10
         hudContentLabel?.left = 5
 
         self.width = defaultHudWidth;
-
-        self.addSubview(hudImageView!)
-        self.addSubview(hudActivityView!)
-        self.addSubview(hudContentLabel!)
+        self.height = (hudContentLabel?.bottom)! + 10
+        
+        if !self.subviews.contains(hudImageView!) {
+            self.addSubview(hudImageView!)
+            self.addSubview(hudActivityView!)
+            self.addSubview(hudContentLabel!)
+        }
         
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true

@@ -42,11 +42,21 @@ class Util{
         return ver as! String
     }
     
-    class func barButtonItem(image:UIImage, target:Any, action:Selector, imageEdgeInsets:UIEdgeInsets)->UIBarButtonItem{
+    class func barButtonItem(image:UIImage, target: Any, action:Selector, imageEdgeInsets:UIEdgeInsets)->UIBarButtonItem{
         let button = Util.barButton(title: nil, target: target, action: action)
         button.imageEdgeInsets = imageEdgeInsets
         button.setImage(image, for: .normal)
         button.width = image.size.width+10
+        button.height = 44
+        button.isExclusiveTouch = true
+        return UIBarButtonItem(customView: button)
+    }
+    
+    class func barButtonItem(title: String, target: Any, action:Selector)->UIBarButtonItem{
+        let button = Util.barButton(title: title, target: target, action: action)
+        let titleSize = title.size(font: UIFont.systemFont(ofSize: 12), constrainedSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: 44))
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        button.width = titleSize.width+10
         button.height = 44
         button.isExclusiveTouch = true
         return UIBarButtonItem(customView: button)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var mainViewController: BMainViewController?
 
 class BMainViewController: JBaseViewController, BMainTabBarDelegate {
     
@@ -21,7 +22,6 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,11 +33,13 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainViewController = self
+
         self.addChildViewController(_recordController)
         self.addChildViewController(_scheduleController)
         self.addChildViewController(_mineController)
         
-        self.title = "宝宝日记"
+        self.title = "喂奶"
         
         tabBar = BMainTabBar()
         tabBar?.delegate = self
@@ -49,6 +51,7 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         _recordController.view.height = self.view.height - (tabBar?.height)!
         self.view.addSubview(_recordController.view)
         preController = _recordController
+        
     }
     
     func setSelectIndex(index: Int){
@@ -59,9 +62,9 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         
         switch index {
         case 0:
-            self.title = "宝宝日记"
+            self.title = "喂奶"
         case 1:
-            self.title = "备忘提醒"
+            self.title = "记录"
         case 2:
             self.title = "我的"
         default:
@@ -95,7 +98,9 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
     }
     
     func tabBarClicked(index: Int) {
-        
+        if index>0 {
+            self.navigationItem.rightBarButtonItem = nil
+        }
         self.setSelectIndex(index: index)
     }
 }

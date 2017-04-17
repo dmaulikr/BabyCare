@@ -21,8 +21,8 @@ class BMainTabBar: UIView {
 //        effectView.frame = self.bounds
 //        self.addSubview(effectView)
         
-        let icons = [["","","随记"],
-                     ["","","备忘"],
+        let icons = [["","","喂奶"],
+                     ["","","记录"],
                      ["","","我的"]]
         let width = self.width/3
         

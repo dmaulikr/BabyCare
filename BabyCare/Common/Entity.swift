@@ -58,7 +58,7 @@ class Entity: NSObject, NSCoding{
         if clsName.contains("Array") {
             equal = true
         }
-        assert(equal, "变量类型为正确设置（\(clsName) != Array)")
+        assert(equal, "变量类型未正确设置（\(clsName) != Array)")
         
         let tempArray = NSMutableArray(array: array)
         for item in array {

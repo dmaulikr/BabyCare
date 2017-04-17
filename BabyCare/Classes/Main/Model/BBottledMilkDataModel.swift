@@ -29,7 +29,7 @@ class BBottledMilkDataModel: JDataModel {
         return "bottledmilk"
     }
     override func param() -> Dictionary<String, String> {
-        return ["babyid": self.babyId!]
+        return ["babyid": self.babyId ?? ""]
     }
     
     override func cacheKey() -> String? {
