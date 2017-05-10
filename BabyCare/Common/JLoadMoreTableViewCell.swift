@@ -22,15 +22,15 @@ protocol JLoadMoreTableViewCellDelegate {
 
 class JLoadMoreTableViewCell: UITableViewCell {
     var delegate: JLoadMoreTableViewCellDelegate?
-    var state: LoadMoreCellState = .normal{
-        didSet{
+    var state: LoadMoreCellState = .normal {
+        didSet {
             // do something
         }
     }
     
     let cellHeight: CGFloat = 44.0
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?){
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)        
     }
     

@@ -18,12 +18,12 @@ class BUserSession{
     static let instance = BUserSession()
     
     // 私有化构造器 配合static 创造单例
-    private init(){
+    private init() {
         self.user = JCacheManager.sharedInstance().cache(forKey: userCacheKey) as! BUser?
     }
     
-    var sessionValid: Bool{
-        get{
+    var sessionValid: Bool {
+        get {
             if user == nil {
                 return false
             }
@@ -31,27 +31,27 @@ class BUserSession{
         }
     }
     
-    var user: BUser?{
-        didSet{
+    var user: BUser? {
+        didSet {
             JCacheManager.sharedInstance().setCache(user, forKey: userCacheKey)
             NotificationCenter.default.post(name: UserInfoUpdateNotification, object: nil)
         }
     }
     
     // update
-    func updateUser(with data: Dictionary<String, Any>){
+    func updateUser(with data: Dictionary<String, Any>) {
         self.user = BUser.entityElement(data: data)
     }
     
     // exit
-    func exitSession(){
+    func exitSession() {
         self.user = nil
     }
     
     func authAndExecute(execute: (Bool) -> Void) {
         if self.sessionValid {
             execute(true)
-        }else{
+        } else {
             
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage{
-    class func imageFrom(color:UIColor) -> UIImage?{
+    class func imageFrom(color:UIColor) -> UIImage? {
 
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)

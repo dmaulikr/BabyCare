@@ -17,7 +17,7 @@ class BBreastMilkEntity: Entity {
 }
 
 class BBreastMilkDataModel: JDataModel {
-    override var limitedCount: Int{
+    override var limitedCount: Int {
         return 15
     }
     
@@ -28,7 +28,7 @@ class BBreastMilkDataModel: JDataModel {
         return "breastmilk"
     }
     override func param() -> Dictionary<String, String> {
-        return ["babyid": self.babyId!]
+        return ["babyid": self.babyId ?? ""]
     }
     
     override func cacheKey() -> String? {

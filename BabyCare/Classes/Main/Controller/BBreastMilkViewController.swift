@@ -16,18 +16,17 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
         return view
     }()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        mainViewController?.navigationItem.rightBarButtonItem = Util.barButtonItem(title: "添加", target: self, action: #selector(add))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: BabyChanged, object: nil)
-
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 60))        
-        let addButton = UIButton(frame: CGRect(x: (headerView.width - 40)/2.0, y: 10, width: 40, height: 40))
-        addButton.cornerRadius = 20
-        addButton.backgroundColor = UIColor.red
-        headerView.addSubview(addButton)        
-        addButton.addTarget(self, action: #selector(add), for: .touchUpInside)
-        self.tableView.tableHeaderView = headerView
+    
     }
     
     override func refreshData() {
@@ -53,7 +52,7 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 1
-        }else{
+        } else {
             return self.dataModel.itemCount
         }
     }

@@ -36,19 +36,19 @@ class JBaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
     
-    override var shouldAutorotate: Bool{
+    override var shouldAutorotate: Bool {
         return false
     }
 
-    override var supportedInterfaceOrientations:UIInterfaceOrientationMask{
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
         return .portrait
     }
     
-    override var preferredInterfaceOrientationForPresentation:UIInterfaceOrientation{
+    override var preferredInterfaceOrientationForPresentation:UIInterfaceOrientation {
         return .portrait
     }
     

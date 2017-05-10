@@ -17,8 +17,7 @@
 
 @implementation JCacheManager
 
-+ (JCacheManager *)sharedInstance
-{
++ (JCacheManager *)sharedInstance {
     static JCacheManager *manager;
     if (!manager) {
         manager = [[JCacheManager alloc] initWithCachePath:[[self dbPath] stringByAppendingString:@"/data.db"]];
@@ -26,8 +25,7 @@
     return manager;
 }
 
-+ (NSString *)dbPath
-{
++ (NSString *)dbPath {
     NSString *rootPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *docDir = [rootPath stringByAppendingPathComponent:@"cache"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:docDir]) {
@@ -40,8 +38,7 @@
     return docDir;
 }
 
-- (id)initWithCachePath:(NSString *)cachePath
-{
+- (id)initWithCachePath:(NSString *)cachePath {
     self = [super init];
     if (self) {
         _dbQueue = [[FMDatabaseQueue alloc] initWithPath:cachePath];
@@ -55,8 +52,7 @@
     return self;
 }
 
-- (void)clearExpiryCache
-{
+- (void)clearExpiryCache {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [_dbQueue inDatabase:^(FMDatabase *db) {
             [db executeUpdate:@"delete from cache where expiry<? and expiry!=0", [NSNumber numberWithFloat:[[NSDate date] timeIntervalSince1970]]];
@@ -64,13 +60,11 @@
     });
 }
 
-- (void)setCache:(id<NSCoding>)cache forKey:(NSString *)key
-{
+- (void)setCache:(id<NSCoding>)cache forKey:(NSString *)key {
     [self setCache:cache forKey:key duration:90*24*60*60];
 }
 
-- (void)setCache:(id<NSCoding>)cache forKey:(NSString *)key duration:(NSInteger)duration
-{
+- (void)setCache:(id<NSCoding>)cache forKey:(NSString *)key duration:(NSInteger)duration {
     if (cache==nil||key==nil) {
         return;
     }
@@ -80,8 +74,7 @@
     }];
 }
 
-- (id)cacheForKey:(NSString *)key
-{
+- (id)cacheForKey:(NSString *)key {
     __block id<NSCoding> result = nil;
     [_dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *rs = [db executeQuery:@"select data from cache where key=? and (expiry>? or expiry=0)", key, [NSNumber numberWithFloat:[[NSDate date] timeIntervalSince1970]]];
@@ -93,8 +86,7 @@
     return result;
 }
 
-- (BOOL)containsCache:(NSString *)key
-{
+- (BOOL)containsCache:(NSString *)key {
     __block BOOL result = NO;
     [_dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *rs = [db executeQuery:@"select key from cache where key=?", key];
@@ -104,15 +96,13 @@
     return result;
 }
 
-- (void)removeCache:(NSString *)key
-{
+- (void)removeCache:(NSString *)key {
     [_dbQueue inDatabase:^(FMDatabase *db) {
         [db executeUpdate:@"delete from cache where key=?", key];
     }];
 }
 
-- (void)clearCache
-{
+- (void)clearCache {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [_dbQueue inDatabase:^(FMDatabase *db) {
             [db executeUpdate:@"delete from cache", [NSNumber numberWithFloat:[[NSDate date] timeIntervalSince1970]]];

@@ -23,7 +23,7 @@ class JPullRefreshLoadMoreViewController: JPullRefreshViewController, JLoadMoreT
     func startLoading(cell: JLoadMoreTableViewCell) {
         if !self.dataModel.loading && self.dataModel.canLoadMore{
             self.loadData()
-        }else if loadMoreCell?.state == .loading{
+        } else if loadMoreCell?.state == .loading {
             loadMoreCell?.state = .normal
         }
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class JDataModel{
+class JDataModel {
     
     var code: Int = 10001
     var msg: String = ""
@@ -18,8 +18,8 @@ class JDataModel{
     var data: AnyObject?
     var itemCount: Int = 0
     
-    var reload: Bool = true{
-        didSet{
+    var reload: Bool = true {
+        didSet {
             if reload {
                 self.page = 0    
             }
@@ -27,7 +27,7 @@ class JDataModel{
     }
     var page = 0
     
-    var limitedCount: Int{
+    var limitedCount: Int {
         return 20
     }
     
@@ -57,7 +57,7 @@ class JDataModel{
     }
     
     
-    private func resultParam() -> Dictionary<String, String>{
+    private func resultParam() -> Dictionary<String, String> {
         var dic = self.param()
         dic["page"] = String(self.page)
         dic["pagesize"] = String(limitedCount)
@@ -65,7 +65,7 @@ class JDataModel{
     } 
     
     
-    func loadData(start:() -> (),sucess:@escaping (_ dataModel: JDataModel) -> (), failed:(_ error: Error) -> ()){
+    func loadData(start:() -> (),sucess:@escaping (_ dataModel: JDataModel) -> (), failed:(_ error: Error) -> ()) {
         if !loading {
             start()
             loading = true
@@ -83,18 +83,18 @@ class JDataModel{
             return self
         }
         if let ret = data?["data"] {
-            if ret is Array<AnyObject>{
+            if ret is Array<AnyObject> {
                 var retArray = [AnyObject]()
                 let tempArray = ret as! [AnyObject]
                 if tempArray.count >= limitedCount {
                     canLoadMore = true
-                }else{
+                } else {
                     canLoadMore = false
                 }
 //                if retArray == nil {return self}
                 
                 
-                for i in 0 ..< (ret as! Array<AnyObject>).count{
+                for i in 0 ..< (ret as! Array<AnyObject>).count {
                     retArray.append(self.entityData(data: (ret as! Array<Any>)[i] as! Dictionary<String, Any>) as AnyObject)
                 }
                 if !reload {
@@ -102,10 +102,10 @@ class JDataModel{
 
                     array += retArray
                     self.data = array as AnyObject?
-                }else{
+                } else {
                     self.data = retArray as AnyObject?
                 }
-            }else{
+            } else {
                 self.data = self.entityData(data: ret as! Dictionary<String, Any>) as AnyObject
             }
             itemCount = (self.data?.count)!
@@ -117,9 +117,9 @@ class JDataModel{
     
     func loadCache() {
         if let cacheKey = self.cacheKey() {
-            if let _ = JCacheManager.sharedInstance().cache(forKey: cacheKey){
+            if let _ = JCacheManager.sharedInstance().cache(forKey: cacheKey) {
                 self.data = JCacheManager.sharedInstance().cache(forKey: cacheKey) as AnyObject
-                if self.data is Array<AnyObject>{
+                if self.data is Array<AnyObject> {
                     itemCount = (self.data?.count)!
                 }
             }

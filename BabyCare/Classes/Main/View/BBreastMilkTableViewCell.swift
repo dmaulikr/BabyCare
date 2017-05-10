@@ -16,8 +16,8 @@ class BBreastMilkTableViewCell: JBaseTableViewCell {
     var leftTimeLabel: UILabel?
     var rightTimeLabel: UILabel?
     
-    var breastMilk:BBreastMilkEntity?{
-        didSet{
+    var breastMilk:BBreastMilkEntity? {
+        didSet {
             self.dayLabel?.attributedText = self.translateToDayString(date: (breastMilk?.createTime)!)
             self.hourLabel?.text = self.translateTimeToShortFormatter(time: (breastMilk?.createTime)!)
             self.leftTimeLabel?.text =  self.translateSecondToMinute(second: (breastMilk?.left)!)
@@ -86,15 +86,14 @@ class BBreastMilkTableViewCell: JBaseTableViewCell {
             attributeString = NSMutableAttributedString(string: "今天")
             attributeString.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 15), range: NSMakeRange(0, 2))
             return attributeString
-        }else if calendar.isDateInYesterday(createDate){
+        } else if calendar.isDateInYesterday(createDate){
             attributeString = NSMutableAttributedString(string: "昨天")
             attributeString.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 15), range: NSMakeRange(0, 2))
             return attributeString  
-        }else{
-           let com = calendar.dateComponents([.month,.day], from: createDate)
+        } else {
+            let com = calendar.dateComponents([.month,.day], from: createDate)
             let day = com.day?.description
             let month = com.month?.description
-            
             
             attributeString = NSMutableAttributedString(string: day! + month! + "月")
             attributeString.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 14), range: NSMakeRange(0, (day?.characters.count)!))

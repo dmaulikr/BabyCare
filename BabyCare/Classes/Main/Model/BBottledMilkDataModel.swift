@@ -18,18 +18,18 @@ class BBottledMilkEntity: Entity {
 
 class BBottledMilkDataModel: JDataModel {
 
-    override var limitedCount: Int{
+    override var limitedCount: Int {
         return 15
     }
     
     var babyId: String?
     
-    
     override func requestUrl() -> String {
         return "bottledmilk"
     }
+    
     override func param() -> Dictionary<String, String> {
-        return ["babyid": self.babyId!]
+        return ["babyid": self.babyId ?? ""]
     }
     
     override func cacheKey() -> String? {

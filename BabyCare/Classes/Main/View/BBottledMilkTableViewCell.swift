@@ -18,7 +18,7 @@ class BBottledMilkTableViewCell: JBaseTableViewCell {
     var amountLabel: UILabel?
     
     var bottledMilk: BBottledMilkEntity? {
-        didSet{
+        didSet {
             dayLabel?.attributedText = self.translateToDayString(date: (bottledMilk?.createTime)!)
             hourLabel?.text = self.translateTimeToShortFormatter(time: (bottledMilk?.createTime)!)
             typeLabel?.text = Int((bottledMilk?.type)!) == 0 ? "母乳" : "配方奶"
@@ -66,11 +66,11 @@ class BBottledMilkTableViewCell: JBaseTableViewCell {
             attributeString = NSMutableAttributedString(string: "今天")
             attributeString.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 15), range: NSMakeRange(0, 2))
             return attributeString
-        }else if calendar.isDateInYesterday(createDate){
+        } else if calendar.isDateInYesterday(createDate){
             attributeString = NSMutableAttributedString(string: "昨天")
             attributeString.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 15), range: NSMakeRange(0, 2))
             return attributeString  
-        }else{
+        } else {
             let com = calendar.dateComponents([.month,.day], from: createDate)
             let day = com.day?.description
             let month = com.month?.description

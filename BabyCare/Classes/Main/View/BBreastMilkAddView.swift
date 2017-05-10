@@ -77,7 +77,6 @@ class BBreastMilkAddView: JCoverShadowView {
         panelView?.addSubview(leftTimeLabel!)
         leftTimeLabel?.text = "0秒"
         
-        
         let rightDesLabel = UILabel(frame: CGRect(x: frame.width - 60 - 60, y: leftDesLabel.top, width: leftDesLabel.width, height: 20))
         rightDesLabel.textAlignment = .center
         rightDesLabel.font = UIFont.systemFont(ofSize: 12)
@@ -124,9 +123,11 @@ class BBreastMilkAddView: JCoverShadowView {
     func restart() {
         leftTime = 0
         rightTime = 0
+        
         if (leftTimer != nil) && (leftTimer?.isValid)! {
             leftTimer?.invalidate()
         }
+        
         if rightTimer != nil && (rightTimer?.isValid)! {
             rightTimer?.invalidate()
         }
@@ -215,7 +216,7 @@ class BBreastMilkAddView: JCoverShadowView {
     func leftButtonClicked(button: UIButton) {
         if button.titleLabel?.text != "暂停" {
             self.leftResume()
-        }else {
+        } else {
             self.leftPause()
         }
         self.rightPause()
@@ -239,7 +240,7 @@ class BBreastMilkAddView: JCoverShadowView {
     func rightButtonClicked(button: UIButton) {
         if button.titleLabel?.text != "暂停" {
             self.rightResume()
-        }else {
+        } else {
             self.rightPause()
         }
         self.leftPause()

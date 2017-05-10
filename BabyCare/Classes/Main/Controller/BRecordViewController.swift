@@ -14,6 +14,7 @@ var currentBaby: BBaby?
 class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMainBabiesScrollViewDelegate {
     
     
+    
     var babiesView: BMainBabiesScrollView?
     
     var preViewController: JBaseViewController?
@@ -23,6 +24,11 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
     
     var segmentControl: BSegmentControl?
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.preViewController?.viewDidAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +38,10 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
         self.view.addSubview(babiesView!)
         self.updateCurrentBaby(index: 0)
         
-        segmentControl = BSegmentControl(with: ["母乳喂养","奶瓶喂养"])
+        segmentControl = BSegmentControl(with: ["母乳","奶瓶"])
         segmentControl?.origin = CGPoint(x: 0, y: (babiesView?.bottom)!)
         segmentControl?.delegate = self
+        segmentControl?.selectedIndex = 0
         self.view.addSubview(segmentControl!)
 
         self.addChildViewController(_breastMilkViewController)
@@ -43,18 +50,23 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
         self.view.addSubview(_breastMilkViewController.view)
         preViewController = _breastMilkViewController
         _breastMilkViewController.view.frame = CGRect(x: 0, y: (segmentControl?.bottom)!, width: self.view.width, height: self.view.height - (segmentControl?.height)! - (babiesView?.height)!)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(needUpdateBabies(notification:)
             ), name: UserInfoUpdateNotification, object: nil)
-
+        
     }
     
     func updateCurrentBaby(index: Int) {
+        let user = BUserSession.instance.user
+        if user == nil {
+            return
+        }
         let babies: Array<BBaby> = BUserSession.instance.user?.babies as! Array<BBaby>
         babiesView?.babies = babies
         currentBaby = babies[index]
     }
     
-    func setSelectIndex(index: Int){
+    func setSelectIndex(index: Int) {
         let controller = self.childViewControllers[index]
         if preViewController == controller {
             return
@@ -79,16 +91,12 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
     
     //MARK: delegate
     
-    func babiesScrollViewClicked(index: Int){
+    func babiesScrollViewClicked(index: Int) {
         self.updateCurrentBaby(index: index)
         NotificationCenter.default.post(name: BabyChanged, object: nil)
     }
     
     func segmentSelected(index: Int) {
-        
-        let babies: Array<BBaby> = BUserSession.instance.user?.babies as! Array<BBaby>
-        babiesView?.babies = babies
-        currentBaby = babies[index]
         self.setSelectIndex(index: index)
     }
 }

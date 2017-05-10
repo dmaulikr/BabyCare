@@ -48,12 +48,12 @@ class JRefreshView: UIView {
             var offset: CGFloat = max(scrollView.contentOffset.y * -1, 0)
             offset = min(offset, 60)
             scrollView.contentInset = UIEdgeInsetsMake(offset, 0, 0, 0)
-        }else if scrollView.isDragging{
+        } else if scrollView.isDragging{
 
             let loading = delegate.pullRefreshLoading(refreshView: self)
             if state == .pulling && scrollView.contentOffset.y > -65 && scrollView.contentOffset.y < 0 && !loading {
                 state = .normal
-            }else if state == .normal && scrollView.contentOffset.y < -65 && !loading{
+            } else if state == .normal && scrollView.contentOffset.y < -65 && !loading{
                 state = .pulling
             }
             if scrollView.contentInset.top != 0 {

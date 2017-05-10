@@ -34,7 +34,7 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
 
     }
 
-    func initializeSubviews(){
+    func initializeSubviews() {
         
         scrollView = UIScrollView(frame: self.view.bounds);
         scrollView?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleHeight]
@@ -105,8 +105,6 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
         verifyCodeButton?.addTarget(self, action: #selector(sendVerifyCode), for: .touchUpInside)
         textBackView?.addSubview(verifyCodeButton!)
         
-        
-        
         let line2 = JOnePixLineView(frame: CGRect(x: 0, y: (verifyCodeTextField?.bottom)!+5, width: (textBackView?.width)!, height: 0.5))
         line2.lineColor = UIColor.colorWithHexAndAlpha(hex: "555555", alpha: 0.4)
         textBackView?.addSubview(line2)
@@ -155,7 +153,7 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
         scrollView?.addSubview(registerBtn)
     }
 
-    func sendVerifyCode(){
+    func sendVerifyCode() {
         
         let mobile = accountTextField?.text
         
@@ -171,16 +169,14 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         verifyCodeButton?.setTitle(String(countDownNumber), for: .normal)
-        
         verifyCodeButton?.isUserInteractionEnabled = false
         
-        
-        HttpManager.requestAsynchronous(url: "verifycode/sendregistercode", parameters: ["mobile":mobile!], completion:{
+        HttpManager.requestAsynchronous(url: "verifycode/sendregistercode", parameters: ["mobile":mobile!], completion: {
             response in 
             let dic = response as! Dictionary<String, Any>
             if (dic["code"] as! Int) == 0 {
                 Hud.show(content: "验证码已发送", withTime: 2)
-            }else{
+            } else {
                 if self.timer != nil{
                     self.verifyCodeButton?.setTitle("获取验证码", for: .normal)
                     self.countDownNumber = 59
@@ -193,7 +189,7 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
         })
     }
     
-    func countDown(){
+    func countDown() {
         print("\(countDownNumber)")
         countDownNumber = countDownNumber - 1
         if countDownNumber <= 0 {
@@ -202,12 +198,12 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
             timer?.invalidate()
             timer = nil
             verifyCodeButton?.isUserInteractionEnabled = true
-        }else{
+        } else {
             verifyCodeButton?.setTitle(String(countDownNumber), for: .normal)
         }
     }
     
-    func register(){
+    func register() {
         let mobile = accountTextField?.text
         let verifyCode = verifyCodeTextField?.text
         let password = passwordTextField?.text
@@ -235,15 +231,13 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
                 self.dismiss(animated: true, completion: {})
                 
                 
-            }else{
+            } else {
                 Hud.show(content: dic["msg"] as! String, withTime: 2)
             }
-            
-        })
-        
+        })        
     }
     
-    func lookupProtocal(){
+    func lookupProtocal() {
         
         webViewController.webUrl = "http://www.baidu.com"
         webViewController.modalTransitionStyle = .crossDissolve
@@ -262,18 +256,18 @@ class BRegisterViewController: JBaseViewController, UITextFieldDelegate {
         
     }
     
-    func closeProtocal(){
+    func closeProtocal() {
         webViewController.dismiss(animated: true, completion: {})
     }
     
-    func closeController(){
+    func closeController() {
         self.modalTransitionStyle = .crossDissolve
         self.dismiss(animated: true, completion: {
             self.presentingViewController?.dismiss(animated: true, completion: {})
         })
     }
     
-    func cancleKeyboard(){
+    func cancleKeyboard() {
         accountTextField?.resignFirstResponder()
         passwordTextField?.resignFirstResponder()
     }

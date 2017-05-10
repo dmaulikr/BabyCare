@@ -17,7 +17,7 @@ extension UIColor{
         return processColorWithHexAndAlpha(hex: hex, alpha: alpha)
     }
     
-    class private func processColorWithHexAndAlpha(hex:String, alpha:Float) -> UIColor{
+    class private func processColorWithHexAndAlpha(hex:String, alpha:Float) -> UIColor {
         if hex.isEmpty {
             return UIColor(white: 0, alpha: CGFloat(alpha))
         }
