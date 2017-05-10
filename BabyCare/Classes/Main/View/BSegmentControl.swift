@@ -18,13 +18,13 @@ class BSegmentControl: UIView {
     var flagView: UIView?
     
     var delegate: BSegmentControlDelegate?
-    var selectedIndex: Int = 0{
-        willSet{
+    var selectedIndex: Int = 0 {
+        willSet {
             let preBtn = items[selectedIndex]
             preBtn.setTitleColor(UIColor.colorWithHexAndAlpha(hex: "555555", alpha: 1), for: .normal)
         }
         
-        didSet{
+        didSet {
             let currentBtn = items[selectedIndex]
             currentBtn.setTitleColor(UIColor.colorWithHexAndAlpha(hex: "6ec6e2", alpha: 1), for: .normal)
 //            UIView.animate(withDuration: 0.15, animations: {
@@ -34,7 +34,7 @@ class BSegmentControl: UIView {
         }
     }
     
-    convenience init(with titles: [String]){
+    convenience init(with titles: [String]) {
         self.init(frame:CGRect(x: 0, y: 0, width: Util.screenWidth(), height: 38))
         assert(titles.count > 0, "segment count error")
         
@@ -72,7 +72,7 @@ class BSegmentControl: UIView {
         }
     }
     
-    func segmentClicked(item: UIButton){
+    func segmentClicked(item: UIButton) {
         let index = items.index(of: item)
         if index == self.selectedIndex {
             return

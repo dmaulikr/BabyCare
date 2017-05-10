@@ -24,13 +24,13 @@ class Entity: NSObject, NSCoding{
         }
     }
 
-    func entity(with:Dictionary<String, Any>){
+    func entity(with:Dictionary<String, Any>) {
         for case let (label?, _) in mirror.children {
             let dicValue = with[label.lowercased()]
             if let _ = dicValue {
                 if dicValue is Int || dicValue is String || dicValue is Float {
                     self.setValue(dicValue, forKey: label)
-                }else{
+                } else {
                     if dicValue is Array<Any> {
                         let array = dicValue as! Array<Any>
                         self.setValue(self.recursionArray(with: array,key: label), forKey: label)
@@ -48,7 +48,7 @@ class Entity: NSObject, NSCoding{
         }
     }
     
-    func recursionArray(with array:Array<Any>, key: String) -> Array<Any>{
+    func recursionArray(with array:Array<Any>, key: String) -> Array<Any> {
         // 对变量类型进行判断 若错误的设置了为array 属性 则 assert
         var clsName = self.getClassName(propertyName: key, pure: true)
         if clsName.characters.count<=0 {
@@ -64,7 +64,7 @@ class Entity: NSObject, NSCoding{
         for item in array {
             if item is Array<Any> {
                 tempArray.replaceObject(at: (array as NSArray).index(of: item), with: self.recursionArray(with: item as! Array, key: key))
-            }else{
+            } else {
                 // 配置表中对应的key：value】
                 let value = self.config[key]! as String
                 
@@ -84,7 +84,7 @@ class Entity: NSObject, NSCoding{
         return tempArray as Array
     }
     
-    func getClassName(propertyName: String, pure: Bool) ->String{
+    func getClassName(propertyName: String, pure: Bool) ->String {
         let property = class_getProperty(self.classForCoder, UnsafePointer<Int8>(propertyName))
         var propertyString = String(cString: property_getAttributes(property)).components(separatedBy: "\"")[1]
         if !pure {
@@ -101,7 +101,7 @@ class Entity: NSObject, NSCoding{
         return propertyString.trimmingCharacters(in: set)
     }
     
-    class func entityElement(data: Dictionary<String, Any>) -> Self{
+    class func entityElement(data: Dictionary<String, Any>) -> Self {
         let entity = self.init()
         entity.entity(with: data)
         return entity
@@ -111,7 +111,7 @@ class Entity: NSObject, NSCoding{
         aCoder.encode(self.reserve(entity: self), forKey: "coder")
     }
 
-    public required init?(coder aDecoder: NSCoder){
+    public required init?(coder aDecoder: NSCoder) {
         super.init()
         self.entity(with: aDecoder.decodeObject(forKey: "coder") as! Dictionary<String, Any>)
         
@@ -130,11 +130,11 @@ class Entity: NSObject, NSCoding{
                     tempArray.append(tempDic)
                 }
                 dic[label] = tempArray
-            }else if clsName.contains("Entity") {
+            } else if clsName.contains("Entity") {
                     // 自定义类型
                 let tempDic =  (value as! Entity).reserve(entity: value as! Entity)
                 dic[label] = tempDic
-            }else{
+            } else {
                 dic[label] = value
             }
         }        

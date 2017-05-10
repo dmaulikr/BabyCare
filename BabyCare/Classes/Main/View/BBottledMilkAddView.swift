@@ -73,7 +73,8 @@ class BBottledMilkAddView: JCoverShadowView, UIPickerViewDelegate, UIPickerViewD
         doneButton.layer.borderWidth = 0.5
         self.addSubview(panelView!)
         
-    }    
+    }   
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -105,7 +106,7 @@ class BBottledMilkAddView: JCoverShadowView, UIPickerViewDelegate, UIPickerViewD
     }
     
     func hide() {
-        if animating{
+        if animating {
             return
         }
         animating = true
@@ -170,7 +171,7 @@ class BBottledMilkAddView: JCoverShadowView, UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         if component == 1 {
             return 50.0
-        }else if component == 3 {
+        } else if component == 3 {
             return 100
         }
         return 80

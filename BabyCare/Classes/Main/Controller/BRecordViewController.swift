@@ -66,7 +66,7 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
         currentBaby = babies[index]
     }
     
-    func setSelectIndex(index: Int){
+    func setSelectIndex(index: Int) {
         let controller = self.childViewControllers[index]
         if preViewController == controller {
             return
@@ -91,7 +91,7 @@ class BRecordViewController: JBaseViewController, BSegmentControlDelegate, BMain
     
     //MARK: delegate
     
-    func babiesScrollViewClicked(index: Int){
+    func babiesScrollViewClicked(index: Int) {
         self.updateCurrentBaby(index: index)
         NotificationCenter.default.post(name: BabyChanged, object: nil)
     }

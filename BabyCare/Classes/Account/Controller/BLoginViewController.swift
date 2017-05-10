@@ -27,7 +27,7 @@ class BLoginViewController: JBaseViewController, UITextFieldDelegate {
 
     }
     
-    func initializeSubviews(){
+    func initializeSubviews() {
         
         scrollView = UIScrollView(frame: self.view.bounds);
         scrollView?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleHeight]
@@ -116,7 +116,7 @@ class BLoginViewController: JBaseViewController, UITextFieldDelegate {
         scrollView?.addSubview(loginBtn)
     }
     
-    func login(){
+    func login() {
         let mobile = accountTextField?.text
         let password = passwordTextField?.text
         
@@ -138,23 +138,23 @@ class BLoginViewController: JBaseViewController, UITextFieldDelegate {
                 self.dismiss(animated: true, completion: { 
                     
                 })
-            }else{
+            } else {
                 Hud.show(content: dic["msg"] as! String, withTime: 3)
             }          
         })
     }
     
-    func findPassword(){
+    func findPassword() {
         
     }
     
-    func register(){
+    func register() {
         let controller = BRegisterViewController()
         controller.modalTransitionStyle = .crossDissolve
         self.present(controller, animated: true, completion: {})
     }
     
-    func visitor(){
+    func visitor() {
         
     }
     

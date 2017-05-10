@@ -51,7 +51,7 @@ class BBottledMilkViewController: JPullRefreshLoadMoreViewController, BBottledMi
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 1
-        }else{
+        } else {
             return self.dataModel.itemCount
         }
     }
@@ -82,7 +82,7 @@ class BBottledMilkViewController: JPullRefreshLoadMoreViewController, BBottledMi
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
             return (self.loadMoreCell?.cellHeight)!
-        }else{
+        } else {
             return BBottledMilkTableViewCell.cellHeightWith(data: nil)
         }
     }
@@ -107,6 +107,5 @@ class BBottledMilkViewController: JPullRefreshLoadMoreViewController, BBottledMi
                 self.refreshData()
             }
         }
-        
     }
 }

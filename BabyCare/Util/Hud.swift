@@ -36,65 +36,65 @@ class Hud{
         return hudV
     }()
     
-    private init(){
+    private init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let wd = appDelegate.window {
             self.window = wd
-        }else{
+        } else {
             self.window = UIApplication.shared.keyWindow
         }
     }
     
     // 简单的显示
-    class func show(content: String){
+    class func show(content: String) {
         self.show(image: nil, content: content, withTime: -1, lock: false, inView: nil)
     }
     
     // 是否禁止操作  lock 锁住操作
-    class func show(content: String, lock: Bool){
+    class func show(content: String, lock: Bool) {
         self.show(image: nil, content: content, withTime: -1, lock: lock, inView: nil)
     }
     
     // 规定时间
-    class func show(content: String, withTime: Float){
+    class func show(content: String, withTime: Float) {
         self.show(image: nil, content: content, withTime: withTime, lock: false, inView: nil)
     }
     
     //
-    class func show(content: String, withTime: Float, inView: UIView){
+    class func show(content: String, withTime: Float, inView: UIView) {
         self.show(image: nil, content: content, withTime: withTime, lock: false, inView: inView)
 
     }
     
     // 图片
-    class func show(image: UIImage){
+    class func show(image: UIImage) {
         self.show(image: image, content: nil, withTime: -1, lock: false, inView: nil)
     }
     
-    class func show(image: UIImage, content: String, withTime: Float){
+    class func show(image: UIImage, content: String, withTime: Float) {
         self.show(image: image, content: content, withTime: withTime, lock: false, inView: nil)
     }
     
-    class func show(image: UIImage?, content: String?, withTime: Float, lock: Bool, inView: UIView?){
+    class func show(image: UIImage?, content: String?, withTime: Float, lock: Bool, inView: UIView?) {
         self.instance.show(image: image, activity: false, content: content, withTime: withTime, lock: lock, inView: inView)
     }
     
     
     // 菊花
-    class func showHudView(inView: UIView, lock: Bool){
+    class func showHudView(inView: UIView, lock: Bool) {
         self.instance.show(image: nil, activity: true, content: "", withTime: -1, lock: lock, inView: inView)
     }
     
-    class func hide(){
+    class func hide() {
         self.instance.hide()
     }
     
     // MARK: ----- instance method
     // 私有方法
-    private func show(image: UIImage?, activity: Bool, content: String?, withTime: Float, lock: Bool, inView: UIView?){
+    private func show(image: UIImage?, activity: Bool, content: String?, withTime: Float, lock: Bool, inView: UIView?) {
         if let _ = inView {
             self.containerView = inView
-        }else{
+        } else {
             self.containerView = self.window
         }
         if lock {
@@ -110,7 +110,7 @@ class Hud{
         self.show()
         if withTime > -1 {
             var time = withTime
-            if time == 0{
+            if time == 0 {
                 time = defaultTime
             }
             PerformSelector(delay: Double(time), execute: { 
@@ -119,7 +119,7 @@ class Hud{
         }
     }
     
-    private func show(){
+    private func show() {
         hudView.alpha = 0
         overlayView?.alpha = 0
         UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
@@ -129,7 +129,7 @@ class Hud{
         })        
     }
     
-    private func hide(){
+    private func hide() {
         
         UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
             self.hudView.alpha = 0
@@ -167,14 +167,14 @@ class HudView: UIView {
         return hudView
     }()
     
-    func layoutView(image: UIImage?, content: String?, activity: Bool){
+    func layoutView(image: UIImage?, content: String?, activity: Bool) {
         if image != nil && activity == true {
             assert(false, "图片和菊花不能同时出现")
         }
         let contentSize = content?.size(font: (hudContentLabel?.font)!, constrainedSize: CGSize(width: defaultHudWidth - 10, height: CGFloat.greatestFiniteMagnitude))
         hudContentLabel?.text = content
 
-        if image != nil{
+        if image != nil {
             hudImageView?.isHidden = false
             hudActivityView?.isHidden = true
             
@@ -183,14 +183,14 @@ class HudView: UIView {
             
             hudContentLabel?.top = (hudImageView?.bottom)! + 10
             
-        }else if(activity){
+        }else if(activity) {
             hudActivityView?.isHidden = false
             hudImageView?.isHidden = true
             
             hudActivityView?.center = CGPoint(x: defaultHudWidth/2, y: 10+(hudActivityView?.height)!/2);
             
             hudContentLabel?.top = (hudActivityView?.bottom)! + 10
-        }else{
+        } else {
             hudActivityView?.isHidden = true
             hudImageView?.isHidden = true
             

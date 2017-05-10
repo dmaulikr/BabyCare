@@ -30,7 +30,7 @@ class JNavigationController: UINavigationController, UIGestureRecognizerDelegate
 //        
 //    }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
@@ -42,19 +42,19 @@ class JNavigationController: UINavigationController, UIGestureRecognizerDelegate
         return false
     }
     
-    override var prefersStatusBarHidden: Bool{
+    override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    override var shouldAutorotate: Bool{
+    override var shouldAutorotate: Bool {
         return (self.topViewController?.shouldAutorotate)!
     }
     
-    override var supportedInterfaceOrientations:UIInterfaceOrientationMask{
+    override var supportedInterfaceOrientations:UIInterfaceOrientationMask {
         return (self.topViewController?.supportedInterfaceOrientations)!
     }
     
-    override var preferredInterfaceOrientationForPresentation:UIInterfaceOrientation{
+    override var preferredInterfaceOrientationForPresentation:UIInterfaceOrientation {
         return (self.topViewController?.preferredInterfaceOrientationForPresentation)!
     }
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 class HttpManager{
 
-    class func requestAsynchronous(url:String, parameters:Dictionary<String, String>,completion:@escaping (_ data:AnyObject?) -> ()){
+    class func requestAsynchronous(url:String, parameters:Dictionary<String, String>,completion:@escaping (_ data:AnyObject?) -> ()) {
 
     #if DEBUG
         var string = "?softversion=\(Util.appVersion())&systype=ios&sysversion=\(Util.systemVersion())"
@@ -24,16 +24,14 @@ class HttpManager{
     #endif
         
         Alamofire.request((HostName+url), method:.post, parameters: parameters, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
-            if response.result.isSuccess{
+            if response.result.isSuccess {
                 let result = response.result.value as AnyObject
                 
                 completion(result)
-            }else{
+            } else {
                 print(response.result.error.debugDescription)
             }
         }
-        
-      
     }
 }
 

@@ -10,13 +10,13 @@ import UIKit
 
 class JBaseTableViewCell: UITableViewCell {
 
-    var separatorShow: Bool = true{
-        didSet{
+    var separatorShow: Bool = true {
+        didSet {
             separatorLineView?.isHidden = !separatorShow
         }
     }
-    var customSeparatorInsets = UIEdgeInsets.zero{
-        didSet{
+    var customSeparatorInsets = UIEdgeInsets.zero {
+        didSet {
             separatorLineView?.left = customSeparatorInsets.left
             separatorLineView?.top = self.height - customSeparatorInsets.bottom - 1
             separatorLineView?.width = self.width - customSeparatorInsets.left - customSeparatorInsets.right
@@ -25,7 +25,7 @@ class JBaseTableViewCell: UITableViewCell {
     
     var separatorLineView: JOnePixLineView?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?){
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
@@ -43,7 +43,7 @@ class JBaseTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
-    class func cellHeightWith(data: AnyObject?) -> CGFloat{
+    class func cellHeightWith(data: AnyObject?) -> CGFloat {
         return 44.0
     }
 }

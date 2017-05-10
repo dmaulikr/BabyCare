@@ -17,7 +17,7 @@ class BBreastMilkEntity: Entity {
 }
 
 class BBreastMilkDataModel: JDataModel {
-    override var limitedCount: Int{
+    override var limitedCount: Int {
         return 15
     }
     

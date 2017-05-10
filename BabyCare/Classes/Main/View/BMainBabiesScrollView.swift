@@ -12,13 +12,13 @@ class BMainBabyAvatarView: UIControl {
     
     var nameLabel: UILabel?
     
-    var baby: BBaby?{
-        didSet{
+    var baby: BBaby? {
+        didSet {
             nameLabel?.text = baby?.babyname
         }
     }
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.colorWithHex(hex: "999999")   
         nameLabel = UILabel(frame: self.bounds)
@@ -37,7 +37,7 @@ class BMainBabyAvatarView: UIControl {
     }
 }
 
-protocol BMainBabiesScrollViewDelegate{
+protocol BMainBabiesScrollViewDelegate {
     func babiesScrollViewClicked(index: Int)
 }
 
@@ -46,25 +46,25 @@ class BMainBabiesScrollView: UIScrollView {
     var clickedDelegate: BMainBabiesScrollViewDelegate?
     
     var selectedIndex: Int? = -1{
-        willSet{
+        willSet {
             let preView = self.viewWithTag(100 + selectedIndex!)
             preView?.backgroundColor = UIColor.colorWithHex(hex: "999999")
         }
         
-        didSet{
+        didSet {
             let newView = self.viewWithTag(100 + selectedIndex!)
             newView?.backgroundColor = UIColor.colorWithHex(hex: "666666")
         }
     }
     
-    var babies: Array<BBaby>?{
-        didSet{
-            for v in self.subviews{
+    var babies: Array<BBaby>? {
+        didSet {
+            for v in self.subviews {
                 v.removeFromSuperview()
             }
             var right: CGFloat = 0.0
             if babies == nil {return}
-            for (index, baby) in (babies?.enumerated())!{    
+            for (index, baby) in (babies?.enumerated())! {    
                 
                 let textWidth = baby.babyname?.size(font: UIFont.systemFont(ofSize: 13), constrainedSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: self.height)).width
                 
@@ -76,7 +76,8 @@ class BMainBabiesScrollView: UIScrollView {
                 avatarView.addTarget(self, action: #selector(clicked(control:)), for: .touchUpInside)
                 self.addSubview(avatarView)
             }
-            if selectedIndex! >= (babies?.count)! || selectedIndex! < 0{
+            
+            if selectedIndex! >= (babies?.count)! || selectedIndex! < 0 {
                 selectedIndex = 0
             }
             

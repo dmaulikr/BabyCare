@@ -54,7 +54,7 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         
     }
     
-    func setSelectIndex(index: Int){
+    func setSelectIndex(index: Int) {
         let controller = self.childViewControllers[index]
         if preController == controller {
             return
@@ -85,7 +85,7 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         })
     }
     
-    func presentLoginController(){
+    func presentLoginController() {
         
         let loginVC = BLoginViewController()
         loginVC.modalTransitionStyle = .crossDissolve
@@ -93,7 +93,7 @@ class BMainViewController: JBaseViewController, BMainTabBarDelegate {
         })
     }
 
-    func clicked(){
+    func clicked() {
 
     }
     

@@ -16,7 +16,7 @@ class BUser: Entity {
     var nickname: String?
     var babies: Array<Any>?
     
-    override var config:[String:String]{
+    override var config:[String:String] {
         get{
            return ["babies":"BBaby"]
         }

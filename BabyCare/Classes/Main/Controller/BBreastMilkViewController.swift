@@ -52,7 +52,7 @@ class BBreastMilkViewController: JPullRefreshLoadMoreViewController, BBreastMilk
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return 1
-        }else{
+        } else {
             return self.dataModel.itemCount
         }
     }

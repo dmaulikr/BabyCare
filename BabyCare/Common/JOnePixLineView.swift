@@ -15,14 +15,14 @@ enum JOnePixMode {
 
 class JOnePixLineView: UIView {
     
-    var lineColor: UIColor?{
+    var lineColor: UIColor? {
         didSet{
             self.setNeedsDisplay()
         }
     }
     
-    var mode: JOnePixMode = .horizontal{
-        didSet{
+    var mode: JOnePixMode = .horizontal {
+        didSet {
             switch mode {
             case .horizontal:
                 self.height = 1
@@ -33,7 +33,7 @@ class JOnePixLineView: UIView {
         }
     }
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clear
         
@@ -50,7 +50,7 @@ class JOnePixLineView: UIView {
         var bottomInset: CGFloat
         if UIScreen.main.scale > 1 {
             bottomInset = 0.25
-        }else{
+        } else {
             bottomInset = 0.5
         }
         
@@ -64,7 +64,7 @@ class JOnePixLineView: UIView {
         if mode == .horizontal {
             context.move(to: CGPoint(x:0 ,y:rect.height-bottomInset))
             context.addLine(to: CGPoint(x: rect.width, y: rect.height - bottomInset))
-        }else{
+        } else {
             context.move(to: CGPoint(x: rect.width, y: 0))
             context.addLine(to: CGPoint(x: rect.width-bottomInset, y: rect.height))
         }

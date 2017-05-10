@@ -11,67 +11,67 @@ import UIKit
 extension UIView{
     
     // 上
-    var top: CGFloat{
-        get{
+    var top: CGFloat {
+        get {
             return self.frame.origin.y
         }
-        set(top){
+        set(top) {
             self.frame = CGRect(x: self.frame.origin.x, y: top, width: self.frame.size.width, height: self.frame.size.height)
         }
     }
     
     // 下
-    var bottom: CGFloat{
-        get{
+    var bottom: CGFloat {
+        get {
             return self.frame.origin.y+self.frame.height
         }
-        set(bottom){
+        set(bottom) {
             self.frame = CGRect(x: self.frame.origin.x, y: bottom-self.frame.size.height, width: self.frame.size.width, height: self.frame.size.height)
         }
     }
     
     
     // 左
-    var left: CGFloat{
-        get{
+    var left: CGFloat {
+        get {
             return self.frame.origin.x
         }
-        set(left){
+        set(left) {
             self.frame = CGRect(x: left, y: self.frame.origin.y, width: self.frame.size.width, height: self.frame.size.height)
         }
     }
     
     // 右
-    var right: CGFloat{
-        get{
+    var right: CGFloat {
+        get {
             return self.frame.origin.x+self.frame.size.width
         }
-        set(right){
+        set(right) {
             self.frame = CGRect(x: right-self.frame.size.width, y: self.frame.origin.y, width: self.frame.size.width, height: self.frame.size.height)
         }
     }
     
     // 宽
-    var width: CGFloat{
-        get{
+    var width: CGFloat {
+        get {
             return self.frame.size.width
         }
-        set(width){
+        set(width) {
             self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: width, height: self.frame.size.height)
         }
     }
   
     // 高
-    var height: CGFloat{
-        get{
+    var height: CGFloat {
+        get {
             return self.frame.size.height
         }
-        set(height){
+        set(height) {
             self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: height)
         }
     }
     
-    var origin: CGPoint{
+    var origin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -80,7 +80,7 @@ extension UIView{
         }
     }
     
-    var cornerRadius: CGFloat{
+    var cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }

@@ -14,7 +14,7 @@ protocol BMainTabBarDelegate {
 
 class BMainTabBar: UIView {
 
-    init(){
+    init() {
         super.init(frame: CGRect(x: 0, y: 0, width: Util.screenWidth(), height: 49))
         self.backgroundColor = UIColor.colorWithHexAndAlpha(hex: "313131", alpha: 1)
 //        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
@@ -26,7 +26,7 @@ class BMainTabBar: UIView {
                      ["","","我的"]]
         let width = self.width/3
         
-        for i in 0 ..< 3{
+        for i in 0 ..< 3 {
             let item = BMainTabBarItem(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: self.height), icons: icons[i])
             item.addTarget(self, action: #selector(itemClicked(control:)), for: .touchUpInside)
             tabContainer.append(item)
@@ -36,12 +36,13 @@ class BMainTabBar: UIView {
     
     var delegate: BMainTabBarDelegate?
     
-    var selectedIndex: Int = 0{
-        willSet{
+    var selectedIndex: Int = 0 {
+        willSet {
             let item = tabContainer[selectedIndex]
             item.isSelected = false
         }
-        didSet{
+        
+        didSet {
             let item = tabContainer[selectedIndex]
             item.isSelected = true
         }
@@ -56,10 +57,9 @@ class BMainTabBar: UIView {
     var tabContainer = [BMainTabBarItem]() 
     
     // func
-    
-    func itemClicked(control: BMainTabBarItem){
+    func itemClicked(control: BMainTabBarItem) {
         let idx = tabContainer.index(of: control)
-        if idx != selectedIndex{
+        if idx != selectedIndex {
             selectedIndex = idx!
             delegate?.tabBarClicked(index: selectedIndex)
         }
@@ -67,7 +67,7 @@ class BMainTabBar: UIView {
 }
 
 
-class BMainTabBarItem: UIControl{
+class BMainTabBarItem: UIControl {
     
     var icons: Array<String>?
     
@@ -94,12 +94,12 @@ class BMainTabBarItem: UIControl{
     var iconImageView: UIImageView?
     var titleLabel: UILabel?
     
-    override var isSelected: Bool{
-        didSet{
+    override var isSelected: Bool {
+        didSet {
             if isSelected {
                 iconImageView?.image = UIImage(named: (self.icons?[1])!)
                 titleLabel?.textColor = UIColor.colorWithHexAndAlpha(hex: "6ec6e2", alpha: 1)
-            }else{
+            } else {
                 iconImageView?.image = UIImage(named: (self.icons?[0])!)
                 titleLabel?.textColor = UIColor.colorWithHexAndAlpha(hex: "ffffff", alpha: 1)
             }
